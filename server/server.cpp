@@ -3,8 +3,26 @@
 #include <sys/socket.h>
 #include <arpa/inet.h>
 #include <unistd.h>
+#include <unordered_map>
 
 #define SERVER_PORT 8080
+
+// Hardcoded usernames & passwords
+std::unordered_map<std::string, std::string> userDB = {
+    {"admin", "password123"},
+    {"user1", "securepass"},
+    {"guest", "guest123"}
+};
+
+bool authenticateUser(const std::string &credentials) {
+    size_t separator = credentials.find(":");
+    if (separator == std::string::npos) return false;
+
+    std::string username = credentials.substr(0, separator);
+    std::string password = credentials.substr(separator + 1);
+
+    return userDB.find(username) != userDB.end() && userDB[username] == password;
+}
 
 int main() {
     int server_socket, client_socket;
@@ -37,21 +55,13 @@ int main() {
 
     std::cout << "SecureLink Server is running on port " << SERVER_PORT << "...\n";
 
-    // Accept client connection
     client_length = sizeof(client_address);
     client_socket = accept(server_socket, (struct sockaddr *)&client_address, &client_length);
-    if (client_socket < 0) {
-        std::cerr << "Error: Client connection failed!\n";
-        return -1;
-    }
 
-    std::cout << "Client connected!\n";
-
-    // Receive message
     read(client_socket, buffer, 1024);
-    std::cout << "Received: " << buffer << "\n";
+    std::string response = authenticateUser(buffer) ? "Authentication Successful!" : "Authentication Failed!";
+    send(client_socket, response.c_str(), response.length(), 0);
 
-    // Close sockets
     close(client_socket);
     close(server_socket);
 
