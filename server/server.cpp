@@ -4,15 +4,41 @@
 #include <arpa/inet.h>
 #include <unistd.h>
 #include <unordered_map>
+#include <fstream>
+#include <ctime>
 
 #define SERVER_PORT 8080
 #define MAX_ATTEMPTS 3 // Maximum number of login attempts
+
+// Server states: Based on requirements 
+enum ServerState { IDLE, MONITORING, ALERT, LOCKDOWN };
+ServerState currentState = IDLE;
+
 // Hardcoded usernames & passwords
 std::unordered_map<std::string, std::string> userDB = {
     {"admin", "password123"},
     {"user1", "securepass"},
     {"guest", "guest123"}
 };
+
+// XOR encryption for simple security (for demo purposes)
+//Implemented a simple XOR-based encryption function for basic message security
+std::string xorEncryptDecrypt(const std::string& input, char key) {
+    std::string output = input;
+    for (char& ch : output) {
+        ch ^= key;
+    }
+    return output;
+}
+
+// Logging function
+//Added logging functionality to track server events and errors in a log file (server_log.txt)
+void logEvent(const std::string& event) {
+    std::ofstream logFile("server_log.txt", std::ios::app);
+    std::time_t now = std::time(nullptr);
+    logFile << std::ctime(&now) << ": " << event << std::endl;
+    logFile.close();
+}
 
 bool authenticateUser(const std::string &credentials) {
     size_t separator = credentials.find(":");
@@ -21,12 +47,18 @@ bool authenticateUser(const std::string &credentials) {
     std::string username = credentials.substr(0, separator);
     std::string password = credentials.substr(separator + 1);
     
-    // Check for empty username or password
+    // Check for empty username or password 
     if (username.empty() || password.empty()) {
+        logEvent("Authentication failed: Empty username or password");
         return false;
     }
-    // Check if username exists and password matches
-    return userDB.find(username) != userDB.end() && userDB[username] == password;
+    if (userDB.find(username) != userDB.end() && userDB[username] == password) {
+        logEvent("Authentication successful for user: " + username);
+        return true;
+    }
+
+    logEvent("Authentication failed for user: " + username);
+    return false;
 }
 
 int main() {
@@ -49,15 +81,18 @@ int main() {
     // Bind socket to port
     if (bind(server_socket, (struct sockaddr*)&server_address, sizeof(server_address)) < 0) {
         std::cerr << "Error: Binding failed!\n";
+        logEvent("Error: Binding failed");
         return -1;
     }
 
     // Listen for connections
     if (listen(server_socket, 3) < 0) {
         std::cerr << "Error: Listening failed!\n";
+        logEvent("Error: Listening failed");
         return -1;
     }
-
+    currentState = IDLE;
+    logEvent("Server started, state: IDLE");
     std::cout << "SecureLink Server is running on port " << SERVER_PORT << "...\n";
 
     client_length = sizeof(client_address);
@@ -65,10 +100,13 @@ int main() {
     //Added a counter to track login attempts for each session
     int attemptCount = 0;
     bool locked = false;
+    currentState = MONITORING;
 
     while (attemptCount < MAX_ATTEMPTS && !locked) {
         memset(buffer, 0, sizeof(buffer));
         read(client_socket, buffer, 1024);
+        //Decrypted incoming credentials using the XOR encryption function before authentication
+        std::string decryptedCreds = xorEncryptDecrypt(buffer, 'K');
 //wrapped the authentication logic in a loop so the server can handle multiple login attempts 
  //without closing the connection after the first failure
         if (authenticateUser(buffer)) {
@@ -84,8 +122,10 @@ int main() {
             if (attemptCount >= MAX_ATTEMPTS) {
                 std::string lockdownMsg = "Too many failed attempts! Server in lockdown mode.";
                 send(client_socket, lockdownMsg.c_str(), lockdownMsg.length(), 0);
-                locked = true;
+                currentState = LOCKDOWN;//Transitioned the server to LOCKDOWN state after too many failed login attempts and logged the alert.
+                logEvent("Alert: Server locked due to excessive failed logins");
                 std::cerr << "Alert: Server locked due to excessive failed logins!\n";
+                locked = true;
             }
         }
     }
@@ -96,6 +136,6 @@ int main() {
 
     close(client_socket);
     close(server_socket);
-
+    logEvent("Server shut down");//Logged server shutdown to keep track of server lifecycle events.
     return 0;
 }
