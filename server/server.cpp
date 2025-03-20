@@ -4,11 +4,15 @@
 #include <arpa/inet.h>
 #include <unistd.h>
 #include "server_logger.h"
+#include "server_state.h"
 
 #define SERVER_PORT 8080
 #define MAX_ATTEMPTS 3
 
 int main() {
+    ServerStateManager serverState;
+    serverState.setState(ServerState::IDLE);
+
     int server_socket, client_socket;
     struct sockaddr_in server_address, client_address;
     socklen_t client_length;
@@ -37,7 +41,8 @@ int main() {
         return -1;
     }
 
-    ServerLogger::logEvent("Server started and listening for connections");
+    serverState.setState(ServerState::MONITORING);
+    ServerLogger::logEvent("Server started, current state: " + serverState.getStateName());
 
     client_length = sizeof(client_address);
     client_socket = accept(server_socket, (struct sockaddr*)&client_address, &client_length);
@@ -49,10 +54,18 @@ int main() {
     }
 
     ServerLogger::logEvent("Client connected");
-
     read(client_socket, buffer, 1024);
     std::cout << "Received: " << buffer << std::endl;
     ServerLogger::logEvent("Received data from client: " + std::string(buffer));
+
+    // Simulate server alert and lockdown
+    if (strcmp(buffer, "alert") == 0) {
+        serverState.setState(ServerState::ALERT);
+        ServerLogger::logEvent("Server state changed to ALERT");
+    } else if (strcmp(buffer, "lockdown") == 0) {
+        serverState.setState(ServerState::LOCKDOWN);
+        ServerLogger::logEvent("Server state changed to LOCKDOWN");
+    }
 
     close(client_socket);
     close(server_socket);
