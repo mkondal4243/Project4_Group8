@@ -1,5 +1,6 @@
 #include <iostream>
 #include "client_utils.h"
+#include "client_auth.h"
 
 #define SERVER_IP "127.0.0.1"
 #define SERVER_PORT 8080
@@ -12,13 +13,7 @@ int main() {
 
     std::cout << "Connected to SecureLink Server!\n";
 
-    std::string username, password;
-    std::cout << "Enter Username: ";
-    std::cin >> username;
-    std::cout << "Enter Password: ";
-    std::cin >> password;
-
-    std::string credentials = username + ":" + password;
+    std::string credentials = ClientAuth::getCredentials();
     ClientUtils::sendMessage(sock, credentials);
 
     std::string response = ClientUtils::receiveMessage(sock);
