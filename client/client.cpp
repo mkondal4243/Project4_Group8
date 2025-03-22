@@ -1,3 +1,4 @@
+FunctionalityFeature-Reconnect
 ﻿#include <iostream>
 #include "client_utils.h"
 #include <unistd.h>  // For sleep()
@@ -39,6 +40,8 @@ int main() {
         return -1;
     }
     // Proceed with authentication and message exchange
+    std::cout << "Connected to SecureLink Server!\n";
+
     std::string username, password;
     std::cout << "Enter Username: ";
     std::cin >> username;
