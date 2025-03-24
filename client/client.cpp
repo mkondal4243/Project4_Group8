@@ -5,16 +5,26 @@
 #include <sys/socket.h>
 #include <arpa/inet.h>
 #include <unistd.h>
+#include <sys/stat.h>  // For mkdir
 
 #define SERVER_IP "127.0.0.1"
 #define SERVER_PORT 9090
 #define CHUNK_SIZE 1024  // File transfer chunk size
 
 void requestLogFile(int sock) {
+    // ✅ Ensure logs/ directory exists
+    const char* logsDir = "client/logs";
+    mkdir(logsDir, 0777);  // Only creates if missing
+
     send(sock, "LOG_REQUEST", strlen("LOG_REQUEST"), 0);
     std::cout << "📤 Sent log request to server...\n";
 
     std::ofstream logFile("client/logs/received_logs.txt", std::ios::binary);
+    if (!logFile) {
+        std::cerr << "❌ Error: Failed to create log file. Make sure 'client/logs/' exists.\n";
+        return;
+    }
+
     char buffer[CHUNK_SIZE];
     int bytesRead;
     while ((bytesRead = recv(sock, buffer, CHUNK_SIZE, 0)) > 0) {
@@ -45,7 +55,6 @@ int main() {
     std::string response = ClientUtils::receiveMessage(sock);
     std::cout << "Server Response: " << response << std::endl;
 
-    // Ask user if they want logs
     std::cout << "Do you want to retrieve logs? (yes/no): ";
     std::string choice;
     std::cin >> choice;

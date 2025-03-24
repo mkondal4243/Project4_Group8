@@ -13,11 +13,11 @@ ServerState ServerStateManager::getState() const {
 }
 
 std::string ServerStateManager::getStateName() const {
-    switch (currentState) {
-        case ServerState::IDLE: return "IDLE";
-        case ServerState::MONITORING: return "MONITORING";
-        case ServerState::ALERT: return "ALERT";
-        case ServerState::LOCKDOWN: return "LOCKDOWN";
-        default: return "UNKNOWN";
+    switch (static_cast<int>(currentState)) {
+    case static_cast<int>(ServerState::IDLE): return "IDLE";
+    case static_cast<int>(ServerState::MONITORING): return "MONITORING";
+    case static_cast<int>(ServerState::ALERT): return "ALERT";
+    case static_cast<int>(ServerState::LOCKDOWN): return "LOCKDOWN";
+    default: return "UNKNOWN";
     }
 }
