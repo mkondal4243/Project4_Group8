@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <cstring>
 #include <sys/socket.h>
 #include <arpa/inet.h>
@@ -8,6 +9,25 @@
 
 #define SERVER_PORT 9090
 #define MAX_BACKLOG 5  // Maximum clients in queue
+#define CHUNK_SIZE 1024  // File transfer chunk size
+
+void sendLogFile(int client_socket) {
+    std::ifstream logFile("server/server_log.txt", std::ios::binary);
+    if (!logFile) {
+        std::cerr << "❌ Error: Unable to open log file!" << std::endl;
+        ServerLogger::logEvent("Error: Unable to open log file for transfer");
+        return;
+    }
+
+    char buffer[CHUNK_SIZE];
+    while (logFile.read(buffer, CHUNK_SIZE) || logFile.gcount() > 0) {
+        send(client_socket, buffer, logFile.gcount(), 0);
+    }
+
+    logFile.close();
+    std::cout << "✅ Log file sent to client" << std::endl;
+    ServerLogger::logEvent("✅ Log file successfully sent to client");
+}
 
 int main() {
     ServerStateManager serverState;
@@ -48,7 +68,6 @@ int main() {
     ServerLogger::logEvent("✅ Server started, current state: " + serverState.getStateName());
     std::cout << "🚀 Server is running on port " << SERVER_PORT << "...\n";
 
-    // Infinite loop to keep server running
     while (true) {
         client_length = sizeof(client_address);
         client_socket = accept(server_socket, (struct sockaddr*)&client_address, &client_length);
@@ -73,16 +92,20 @@ int main() {
             std::cout << "📩 Received: " << buffer << std::endl;
             ServerLogger::logEvent("📩 Received data from client: " + std::string(buffer));
 
-            // Send acknowledgment to client
-            std::string response = "✅ Received credentials";
-            send(client_socket, response.c_str(), response.length(), 0);
+            // Handle log file request
+            if (strcmp(buffer, "LOG_REQUEST") == 0) {
+                sendLogFile(client_socket);
+            } else {
+                // Send acknowledgment for authentication
+                std::string response = "✅ Received credentials";
+                send(client_socket, response.c_str(), response.length(), 0);
+            }
         }
 
         close(client_socket);
         ServerLogger::logEvent("👋 Client disconnected");
     }
 
-    // Close server (only exits if manually stopped)
     close(server_socket);
     ServerLogger::logEvent("🔴 Server shut down");
 

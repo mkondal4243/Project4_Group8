@@ -1,8 +1,29 @@
 #include <iostream>
 #include "client_utils.h"
+#include <fstream>
+#include <cstring>
+#include <sys/socket.h>
+#include <arpa/inet.h>
+#include <unistd.h>
 
 #define SERVER_IP "127.0.0.1"
 #define SERVER_PORT 9090
+#define CHUNK_SIZE 1024  // File transfer chunk size
+
+void requestLogFile(int sock) {
+    send(sock, "LOG_REQUEST", strlen("LOG_REQUEST"), 0);
+    std::cout << "📤 Sent log request to server...\n";
+
+    std::ofstream logFile("client/logs/received_logs.txt", std::ios::binary);
+    char buffer[CHUNK_SIZE];
+    int bytesRead;
+    while ((bytesRead = recv(sock, buffer, CHUNK_SIZE, 0)) > 0) {
+        logFile.write(buffer, bytesRead);
+    }
+
+    logFile.close();
+    std::cout << "✅ Log file received and saved in client/logs/received_logs.txt" << std::endl;
+}
 
 int main() {
     int sock = ClientUtils::createSocket();
@@ -23,6 +44,15 @@ int main() {
 
     std::string response = ClientUtils::receiveMessage(sock);
     std::cout << "Server Response: " << response << std::endl;
+
+    // Ask user if they want logs
+    std::cout << "Do you want to retrieve logs? (yes/no): ";
+    std::string choice;
+    std::cin >> choice;
+
+    if (choice == "yes") {
+        requestLogFile(sock);
+    }
 
     ClientUtils::closeSocket(sock);
     std::cout << "Connection closed.\n";
