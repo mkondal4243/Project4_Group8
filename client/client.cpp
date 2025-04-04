@@ -1,70 +1,62 @@
 #include <iostream>
-#include "client_utils.h"
 #include <fstream>
-#include <cstring>
-#include <sys/socket.h>
-#include <arpa/inet.h>
-#include <unistd.h>
-#include <sys/stat.h>  // For mkdir
+#include <thread>
+#include <chrono>
+#include "client_utils.h"
+#include <sys/stat.h>
 
 #define SERVER_IP "127.0.0.1"
 #define SERVER_PORT 9090
-#define CHUNK_SIZE 1024
 #define MAX_RETRIES 5
+#define LOG_FILE_NAME "client/logs/received_logs.txt"
 
-void requestLogFile(int sock) {
-    // Ensure logs directory exists
+bool tryReconnect(int& sock) {
+    for (int i = 0; i < MAX_RETRIES; ++i) {
+        std::cout << "Attempting to reconnect (" << i + 1 << "/" << MAX_RETRIES << ")...\n";
+        sock = ClientUtils::createSocket();
+        if (sock >= 0 && ClientUtils::connectToServer(sock, SERVER_IP, SERVER_PORT)) {
+            std::cout << "✅ Reconnected successfully.\n";
+            return true;
+        }
+        std::this_thread::sleep_for(std::chrono::seconds(2));
+    }
+    std::cerr << "❌ Failed to reconnect after " << MAX_RETRIES << " attempts.\n";
+    return false;
+}
+
+void handleMotionEvent(const std::string& message) {
+    if (message.find("MOTION_DETECTED") != std::string::npos) {
+        std::cout << "🚨 [Security Alert] Motion Detected! Taking appropriate action...\n";
+    }
+}
+
+void receiveAndSaveLogFile(int sock) {
+    // Ensure logs/ directory exists
     const char* logsDir = "client/logs";
     mkdir(logsDir, 0777);
 
-    send(sock, "LOG_REQUEST", strlen("LOG_REQUEST"), 0);
-    std::cout << "📤 Sent log request to server...\n";
-
-    std::ofstream logFile("client/logs/received_logs.txt", std::ios::binary);
-    if (!logFile) {
-        std::cerr << "❌ Error: Failed to create log file. Make sure 'client/logs/' exists.\n";
+    std::ofstream logFile(LOG_FILE_NAME);
+    if (!logFile.is_open()) {
+        std::cerr << "❌ Failed to open log file for writing.\n";
         return;
     }
 
-    char buffer[CHUNK_SIZE];
-    int bytesRead;
-    while ((bytesRead = recv(sock, buffer, CHUNK_SIZE, 0)) > 0) {
-        logFile.write(buffer, bytesRead);
-    }
-
+    std::string logData = ClientUtils::receiveMessage(sock);
+    logFile << logData;
     logFile.close();
-    std::cout << "✅ Log file received and saved in client/logs/received_logs.txt" << std::endl;
+    std::cout << "✅ Log file saved at '" << LOG_FILE_NAME << "'.\n";
 }
 
 int main() {
-    int sock;
-    int attempt = 0;
+    int sock = ClientUtils::createSocket();
+    if (sock < 0) return -1;
 
-    // Retry connection logic (Auto-Reconnect)
-    while (attempt < MAX_RETRIES) {
-        sock = ClientUtils::createSocket();
-        if (sock < 0) {
-            std::cerr << "❌ Socket creation failed. Exiting.\n";
-            return -1;
-        }
-
-        if (ClientUtils::connectToServer(sock, SERVER_IP, SERVER_PORT)) {
-            std::cout << "✅ Connected to SecureLink Server!\n";
-            break;
-        }
-
-        std::cerr << "⚠️ Connection attempt " << (attempt + 1) << " failed. Retrying in 2 seconds...\n";
-        close(sock);
-        sleep(2);
-        attempt++;
+    if (!ClientUtils::connectToServer(sock, SERVER_IP, SERVER_PORT)) {
+        if (!tryReconnect(sock)) return -1;
     }
 
-    if (attempt == MAX_RETRIES) {
-        std::cerr << "❌ Unable to establish connection after multiple attempts. Exiting.\n";
-        return -1;
-    }
+    std::cout << "Connected to SecureLink Server!\n";
 
-    // Authentication
     std::string username, password;
     std::cout << "Enter Username: ";
     std::cin >> username;
@@ -77,13 +69,11 @@ int main() {
     std::string response = ClientUtils::receiveMessage(sock);
     std::cout << "Server Response: " << response << std::endl;
 
-    // Ask user if they want logs
-    std::cout << "Do you want to retrieve logs? (yes/no): ";
-    std::string choice;
-    std::cin >> choice;
-
-    if (choice == "yes") {
-        requestLogFile(sock);
+    if (response == "AUTH_SUCCESS") {
+        receiveAndSaveLogFile(sock);
+        std::string eventMessage = ClientUtils::receiveMessage(sock);
+        std::cout << "Event: " << eventMessage << std::endl;
+        handleMotionEvent(eventMessage);
     }
 
     ClientUtils::closeSocket(sock);
