@@ -72,3 +72,81 @@ Mon Mar 24 18:10:46 2025
 : 🚨 Motion detected alert sent to client
 Mon Mar 24 18:10:46 2025
 : 👋 Client disconnected
+Fri Apr  4 22:33:58 2025
+: ✅ Server started, current state: MONITORING
+Fri Apr  4 22:42:04 2025
+: ✅ Client connected
+Fri Apr  4 22:42:04 2025
+: 📩 Received data from client: admin:123
+Fri Apr  4 22:45:24 2025
+: ✅ Server started, current state: MONITORING
+Fri Apr  4 22:45:29 2025
+: ✅ Client connected
+Fri Apr  4 22:45:29 2025
+: 📩 Received data from client: admin:password123
+Fri Apr  4 22:45:31 2025
+: 🚨 Motion detected alert sent to client
+Fri Apr  4 22:45:31 2025
+: 👋 Client disconnected
+Fri Apr  4 22:45:49 2025
+: ✅ Client connected
+Fri Apr  4 22:45:49 2025
+: 📩 Received data from client: admin:123
+Fri Apr  4 22:46:29 2025
+: ✅ Server started, current state: MONITORING
+Fri Apr  4 22:46:37 2025
+: ✅ Client connected
+Fri Apr  4 22:46:37 2025
+: 📩 Received data from client: admin:123
+Fri Apr  4 22:46:39 2025
+: 🚨 Motion detected alert sent to client
+Fri Apr  4 22:46:39 2025
+: 👋 Client disconnected
+Fri Apr  4 22:50:05 2025
+: ✅ Client connected
+Fri Apr  4 22:50:05 2025
+: 📩 Received data from client: admin:123
+Fri Apr  4 22:50:07 2025
+: 🚨 Motion detected alert sent to client
+Fri Apr  4 22:50:07 2025
+: 👋 Client disconnected
+Fri Apr  4 22:55:24 2025
+: ✅ Client connected
+Fri Apr  4 22:55:24 2025
+: 📩 Received data from client: admin:123
+Fri Apr  4 22:55:26 2025
+: 🚨 Motion detected alert sent to client
+Fri Apr  4 22:55:26 2025
+: 👋 Client disconnected
+Fri Apr  4 23:06:31 2025
+: ✅ Client connected
+Fri Apr  4 23:06:31 2025
+: 📩 Received data from client: :
+Fri Apr  4 23:06:33 2025
+: 🚨 Motion detected alert sent to client
+Fri Apr  4 23:06:33 2025
+: 👋 Client disconnected
+Fri Apr  4 23:11:19 2025
+: ✅ Client connected
+Fri Apr  4 23:11:19 2025
+: 📩 Received data from client: :
+Fri Apr  4 23:11:21 2025
+: 🚨 Motion detected alert sent to client
+Fri Apr  4 23:11:21 2025
+: 👋 Client disconnected
+Fri Apr  4 23:16:26 2025
+: ✅ Client connected
+Fri Apr  4 23:16:26 2025
+: 📩 Received data from client: :
+Fri Apr  4 23:16:28 2025
+: 🚨 Motion detected alert sent to client
+Fri Apr  4 23:16:28 2025
+: 👋 Client disconnected
+Fri Apr  4 23:16:28 2025
+: ✅ Client connected
+Fri Apr  4 23:16:28 2025
+: 📩 Received data from client: :
+Fri Apr  4 23:16:30 2025
+: 🚨 Motion detected alert sent to client
+Fri Apr  4 23:16:30 2025
+: 👋 Client disconnected
