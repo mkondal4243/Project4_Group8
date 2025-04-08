@@ -1,7 +1,7 @@
 {
     "connection": {
       "server_ip": "127.0.0.1",
-      "server_port": 9090,
+      "server_port": 8080,
       "timeout_ms": 5000
     },
     "authentication": {

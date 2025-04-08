@@ -1,0 +1,8 @@
+Fri Mar 14 19:20:06 2025
+: Server started, state: IDLE
+Fri Mar 14 19:21:18 2025
+: Authentication failed for user: Rai
+Fri Mar 14 19:21:18 2025
+: Alert: Server locked due to excessive failed logins
+Fri Mar 14 19:21:18 2025
+: Server shut down

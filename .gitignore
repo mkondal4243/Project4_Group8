@@ -361,12 +361,3 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd.DS_Store
-
-# Ignore compiled files and logs
-client.out
-server.out
-test_client.out
-test_server.out
-server_log.txt
-*.log
-
