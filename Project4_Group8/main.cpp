@@ -1,9 +1,15 @@
-#include<iostream>
-#include<string>
-using namespace std;
+#include <iostream>
+#include "server_db.h"
 
 int main() {
-	cout << "This is group 8" << endl;
-	cout << "Hello World" << endl;
-	return 0;
+    std::cout << "This is group 8" << std::endl;
+
+    if (initializeDatabase()) {
+        std::cout << "✅ Database initialized successfully.\n";
+    } else {
+        std::cerr << "❌ Database initialization failed.\n";
+    }
+
+    std::cout << "Hello World" << std::endl;
+    return 0;
 }

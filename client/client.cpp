@@ -8,7 +8,7 @@
 #define SERVER_IP "127.0.0.1"
 #define SERVER_PORT 9090
 #define MAX_RETRIES 5
-#define LOG_FILE_NAME "client/logs/received_logs.txt"
+#define LOG_FILE_NAME "logs/received_logs.txt"
 
 bool tryReconnect(int& sock) {
     for (int i = 0; i < MAX_RETRIES; ++i) {
@@ -32,8 +32,11 @@ void handleMotionEvent(const std::string& message) {
 
 void receiveAndSaveLogFile(int sock) {
     // Ensure logs/ directory exists
-    const char* logsDir = "client/logs";
+    const char* logsDir = "logs";
+    struct stat st = {0};
+if (stat(logsDir, &st) == -1) {
     mkdir(logsDir, 0777);
+}
 
     std::ofstream logFile(LOG_FILE_NAME);
     if (!logFile.is_open()) {
