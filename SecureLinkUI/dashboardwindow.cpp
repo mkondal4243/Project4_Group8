@@ -1,135 +1,111 @@
 #include "dashboardwindow.h"
-#include <QDebug>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QFrame>
-#include <QListWidget>
-#include <QListWidgetItem>
-#include <QStackedWidget>
+#include <QMouseEvent>
+
+class ClickableTile : public QFrame {
+    Q_OBJECT
+public:
+    explicit ClickableTile(const QString &icon, const QString &title, const QString &desc, QWidget *parent = nullptr)
+        : QFrame(parent)
+    {
+        setStyleSheet(R"(
+            QFrame {
+                background-color: #222;
+                border-radius: 16px;
+                padding: 24px;
+            }
+            QFrame:hover {
+                background-color: #2e2e2e;
+            }
+        )");
+
+        QVBoxLayout *layout = new QVBoxLayout(this);
+
+        QLabel *iconLabel = new QLabel(icon);
+        iconLabel->setStyleSheet("font-size: 28px; color: gold;");
+        iconLabel->setAlignment(Qt::AlignCenter);
+
+        QLabel *titleLabel = new QLabel(title);
+        titleLabel->setStyleSheet("font-size: 16px; color: white; font-weight: bold;");
+        titleLabel->setAlignment(Qt::AlignCenter);
+
+        QLabel *descLabel = new QLabel(desc);
+        descLabel->setStyleSheet("font-size: 12px; color: #bbb;");
+        descLabel->setAlignment(Qt::AlignCenter);
+
+        layout->addWidget(iconLabel);
+        layout->addSpacing(5);
+        layout->addWidget(titleLabel);
+        layout->addWidget(descLabel);
+    }
+
+signals:
+    void clicked();
+
+protected:
+    void mousePressEvent(QMouseEvent *event) override {
+        emit clicked();
+        QFrame::mousePressEvent(event);
+    }
+};
+
+#include "dashboardwindow.moc"
 
 DashboardWindow::DashboardWindow(QWidget *parent)
     : QMainWindow(parent)
 {
     QWidget *central = new QWidget(this);
+    QVBoxLayout *mainLayout = new QVBoxLayout(central);
+
+    QLabel *title = new QLabel("🔐 SecureLink Control Panel");
+    title->setStyleSheet("font-size: 24px; font-weight: bold; color: gold;");
+    title->setAlignment(Qt::AlignCenter);
+
+    QLabel *subtitle = new QLabel("Your smart defense system — real-time camera, locks, and automation.");
+    subtitle->setStyleSheet("font-size: 14px; color: #bbb;");
+    subtitle->setAlignment(Qt::AlignCenter);
+
+    QHBoxLayout *tileLayout = new QHBoxLayout();
+
+    auto *lockTile = new ClickableTile("🔒", "Front Door Lock", "Status: Locked");
+    auto *cameraTile = new ClickableTile("📷", "Camera Feed", "Live View");
+    auto *garageTile = new ClickableTile("🚪", "Garage Door", "Last opened: N/A");
+    auto *lightTile = new ClickableTile("💡", "Smart Light", "Tap to toggle");
+
+    connect(lockTile, &ClickableTile::clicked, this, &DashboardWindow::openSmartLockPage);
+    connect(cameraTile, &ClickableTile::clicked, this, &DashboardWindow::openCameraPage);
+    connect(garageTile, &ClickableTile::clicked, this, &DashboardWindow::openGarageDoorPage);
+    connect(lightTile, &ClickableTile::clicked, this, &DashboardWindow::openSmartLightPage);
+
+    tileLayout->addWidget(lockTile);
+    tileLayout->addWidget(cameraTile);
+    tileLayout->addWidget(garageTile);
+    tileLayout->addWidget(lightTile);
+
+    mainLayout->addSpacing(30);
+    mainLayout->addWidget(title);
+
+    statusIndicator = new QLabel("🟢 Server Status: Monitoring", this);
+    statusIndicator->setAlignment(Qt::AlignCenter);
+    statusIndicator->setStyleSheet("font-size: 14px; color: lightgreen;");
+    mainLayout->addWidget(statusIndicator);
+
+    mainLayout->addWidget(subtitle);
+    mainLayout->addSpacing(20);
+    mainLayout->addLayout(tileLayout);
+    mainLayout->addStretch();
+
     setCentralWidget(central);
-    QHBoxLayout *mainLayout = new QHBoxLayout(central);
-
-    // Sidebar
-    QListWidget *sideMenu = new QListWidget(this);
-    sideMenu->setFixedWidth(180);
-    sideMenu->setStyleSheet(R"(
-        QListWidget {
-            background-color: #1a1a1a;
-            color: white;
-            font-size: 14px;
-            padding: 10px;
-        }
-        QListWidget::item {
-            padding: 12px;
-        }
-        QListWidget::item:selected {
-            background-color: #b8860b;
-            color: black;
-        }
-    )");
-    sideMenu->addItem("🔐 Dashboard");
-    sideMenu->addItem("📁 Log Transfer");
-    sideMenu->addItem("🚨 Motion Alerts");
-    sideMenu->addItem("📄 Access Logs");
-
-    // Page stack
-    stackedWidget = new QStackedWidget(this);
-
-    // Dashboard Page
-    QWidget *dashPage = new QWidget();
-    QVBoxLayout *dashLayout = new QVBoxLayout(dashPage);
-
-    QLabel *welcome = new QLabel("🔐 SecureLink Control Panel");
-    welcome->setStyleSheet("font-size: 22px; font-weight: bold; color: gold;");
-    welcome->setAlignment(Qt::AlignCenter);
-
-    QLabel *tagline = new QLabel("Your home’s smart defense system — view logs, monitor motion, and more.");
-    tagline->setStyleSheet("font-size: 14px; color: #bbb;");
-    tagline->setAlignment(Qt::AlignCenter);
-
-    QHBoxLayout *tilesLayout = new QHBoxLayout();
-    auto tile = [](QString icon, QString title, QString desc) {
-        QFrame *frame = new QFrame();
-        frame->setStyleSheet("QFrame { background-color: #222; border-radius: 12px; padding: 20px; }");
-        QVBoxLayout *layout = new QVBoxLayout(frame);
-        QLabel *iconLabel = new QLabel(icon); iconLabel->setStyleSheet("font-size: 24px; color: gold;");
-        QLabel *titleLabel = new QLabel(title); titleLabel->setStyleSheet("font-size: 16px; color: white; font-weight: bold;");
-        QLabel *descLabel = new QLabel(desc); descLabel->setStyleSheet("font-size: 12px; color: #bbb;");
-        iconLabel->setAlignment(Qt::AlignCenter);
-        titleLabel->setAlignment(Qt::AlignCenter);
-        descLabel->setAlignment(Qt::AlignCenter);
-        layout->addWidget(iconLabel); layout->addSpacing(5);
-        layout->addWidget(titleLabel); layout->addWidget(descLabel);
-        return frame;
-    };
-
-    tilesLayout->addWidget(tile("🔒", "Smart Lock", "Status: Locked"));
-    tilesLayout->addWidget(tile("📷", "Camera Feed", "Live Monitoring"));
-    tilesLayout->addWidget(tile("🚪", "Garage Door", "Closed at 9:12 AM"));
-
-    dashLayout->addSpacing(30);
-    dashLayout->addWidget(welcome);
-    dashLayout->addWidget(tagline);
-    dashLayout->addSpacing(20);
-    dashLayout->addLayout(tilesLayout);
-    dashLayout->addStretch();
-
-    // Log Transfer Page
-    QWidget *logPage = new QLabel("📁 Log Transfer Page Coming Soon");
-
-    // Motion Alerts Page
-    QWidget *motionPage = new QLabel("🚨 Motion Alerts Page Coming Soon");
-
-    // Access Logs Page
-    QWidget *accessPage = new QWidget();
-    QVBoxLayout *accessLayout = new QVBoxLayout(accessPage);
-
-    QLabel *accessTitle = new QLabel("📄 Access Logs Summary");
-    accessTitle->setStyleSheet("font-size: 20px; font-weight: bold; color: gold;");
-    accessTitle->setAlignment(Qt::AlignCenter);
-
-    QLabel *accessDesc = new QLabel("You’ll be able to view login attempts, timestamped entries, and suspicious access activity here.");
-    accessDesc->setStyleSheet("font-size: 14px; color: #aaa;");
-    accessDesc->setAlignment(Qt::AlignCenter);
-    accessDesc->setWordWrap(true);
-
-    QFrame *placeholderBox = new QFrame();
-    placeholderBox->setStyleSheet("QFrame { border: 2px dashed #444; background-color: #1e1e1e; border-radius: 12px; margin: 40px; }");
-    QVBoxLayout *placeholderLayout = new QVBoxLayout(placeholderBox);
-    QLabel *noLogs = new QLabel("🔐 No logs to display yet.");
-    noLogs->setStyleSheet("font-size: 16px; color: #888;");
-    noLogs->setAlignment(Qt::AlignCenter);
-    placeholderLayout->addStretch(); placeholderLayout->addWidget(noLogs); placeholderLayout->addStretch();
-
-    accessLayout->addStretch();
-    accessLayout->addWidget(accessTitle);
-    accessLayout->addSpacing(10);
-    accessLayout->addWidget(accessDesc);
-    accessLayout->addWidget(placeholderBox);
-    accessLayout->addStretch();
-
-    // Add pages
-    stackedWidget->addWidget(dashPage);      // 0
-    stackedWidget->addWidget(logPage);       // 1
-    stackedWidget->addWidget(motionPage);    // 2
-    stackedWidget->addWidget(accessPage);    // 3
-
-    // Final layout
-    mainLayout->addWidget(sideMenu);
-    mainLayout->addWidget(stackedWidget);
-
-    connect(sideMenu, &QListWidget::currentRowChanged, stackedWidget, &QStackedWidget::setCurrentIndex);
+    setStyleSheet("background-color: #2b2b2b;");
 }
 
-DashboardWindow::~DashboardWindow() {}
+DashboardWindow::~DashboardWindow() {}  // ✅ Don't forget this!
 
-void DashboardWindow::showDashboard() { qDebug() << "Dashboard clicked"; stackedWidget->setCurrentIndex(0); }
-void DashboardWindow::showLogTransfer() { qDebug() << "Log Transfer clicked"; stackedWidget->setCurrentIndex(1); }
-void DashboardWindow::showMotionAlerts() { qDebug() << "Motion Alerts clicked"; stackedWidget->setCurrentIndex(2); }
-void DashboardWindow::showAccessLogs() { qDebug() << "Access Logs clicked"; stackedWidget->setCurrentIndex(3); }
+void DashboardWindow::updateServerStatus(const QString& message, const QString& color)
+{
+    statusIndicator->setText(message);
+    statusIndicator->setStyleSheet(QString("font-size: 14px; color: %1;").arg(color));
+}

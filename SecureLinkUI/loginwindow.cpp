@@ -1,5 +1,6 @@
 #include "loginwindow.h"
 #include "login_backend.h"
+#include "mainwindow.h"
 #include "dashboardwindow.h"
 #include <QMessageBox>
 #include <QVBoxLayout>
@@ -19,23 +20,19 @@ LoginWindow::LoginWindow(QWidget *parent)
 
     QVBoxLayout *mainLayout = new QVBoxLayout(central);
 
-    // 🔲 HEADER
     QLabel *header = new QLabel("🔐 SecureLink", this);
     header->setStyleSheet("font-size: 28px; font-weight: bold; color: gold; background-color: #1a1a1a; padding: 12px;");
     header->setAlignment(Qt::AlignCenter);
     mainLayout->addWidget(header);
 
-    // 🧱 MAIN CONTENT AREA
     QHBoxLayout *contentLayout = new QHBoxLayout();
 
-    // Left Block
     QVBoxLayout *leftLayout = new QVBoxLayout();
     QLabel *tagline = new QLabel("Your Digital Fortress", this);
     tagline->setStyleSheet("font-size: 22px; font-weight: bold; color: #d4af37;");
     QLabel *desc = new QLabel("Military-grade protection for your home & data.", this);
     desc->setStyleSheet("font-size: 14px; color: #ccc;");
     desc->setWordWrap(true);
-
     leftLayout->addStretch();
     leftLayout->addWidget(tagline);
     leftLayout->addSpacing(10);
@@ -44,7 +41,6 @@ LoginWindow::LoginWindow(QWidget *parent)
     leftLayout->setAlignment(Qt::AlignLeft);
     leftLayout->setContentsMargins(80, 20, 40, 20);
 
-    // Right Login Form Block
     QVBoxLayout *formLayout = new QVBoxLayout();
     QFrame *loginBox = new QFrame(this);
     loginBox->setObjectName("loginBox");
@@ -64,7 +60,6 @@ LoginWindow::LoginWindow(QWidget *parent)
 
     loginButton = new QPushButton("Login", this);
     connect(loginButton, &QPushButton::clicked, this, &LoginWindow::handleLogin);
-
 
     QPushButton *forgotPasswordBtn = new QPushButton("Forgot Password?", this);
     QPushButton *signupBtn = new QPushButton("Sign Up", this);
@@ -93,7 +88,6 @@ LoginWindow::LoginWindow(QWidget *parent)
     contentLayout->addLayout(formLayout, 1);
     mainLayout->addLayout(contentLayout);
 
-    // 🔲 FOOTER
     QLabel *footer = new QLabel("© 2025 SecureLink Security Systems", this);
     footer->setStyleSheet("font-size: 12px; color: #777; background-color: #1a1a1a; padding: 8px;");
     footer->setAlignment(Qt::AlignCenter);
@@ -102,18 +96,17 @@ LoginWindow::LoginWindow(QWidget *parent)
     setCentralWidget(central);
     setWindowTitle("SecureLink - Login");
 
-    // 🎨 Styling
     setStyleSheet(R"(
         #centralWidget {
             background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
                         stop:0 #121212, stop:0.5 #2a2a2a, stop:1 #3a2c1c);
         }
         QLineEdit {
-        background-color: #f5f5f5;
-        border-radius: 6px;
-        padding: 10px;
-        font-size: 14px;
-        color: #000; /* 🟡 This makes the typed text black */
+            background-color: #f5f5f5;
+            border-radius: 6px;
+            padding: 10px;
+            font-size: 14px;
+            color: #000;
         }
         QLineEdit::placeholder {
             color: #999;
@@ -143,7 +136,6 @@ LoginWindow::LoginWindow(QWidget *parent)
         }
     )");
 
-    // Fade Animation
     QGraphicsOpacityEffect *fadeEffect = new QGraphicsOpacityEffect(this);
     central->setGraphicsEffect(fadeEffect);
     QPropertyAnimation *fadeAnim = new QPropertyAnimation(fadeEffect, "opacity");
@@ -158,13 +150,19 @@ void LoginWindow::handleLogin()
     QString user = usernameField->text();
     QString pass = passwordField->text();
 
-    if (LoginBackend::authenticate(user, pass)) {
-        // Open dashboard only after successful login
-        DashboardWindow *dashboard = new DashboardWindow();
-        dashboard->show();
-        this->close();  // Hide the login screen
+    // 🔁 Direct dashboard status update during login
+    DashboardWindow* dashboardWindow = new DashboardWindow();
+
+    bool ok = LoginBackend::authenticate(user, pass, dashboardWindow);
+
+    if (ok) {
+        MainWindow* mainApp = new MainWindow();
+        mainApp->show();
+        this->close();
+        delete dashboardWindow;  // dashboardWindow was just for status updating
     } else {
-        QMessageBox::critical(this, "Login Failed", "Invalid username or password.");
+        delete dashboardWindow;
+        QMessageBox::critical(this, "Login Failed", "Invalid credentials or server is offline.");
     }
 }
 

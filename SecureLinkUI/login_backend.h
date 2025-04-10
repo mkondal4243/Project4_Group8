@@ -3,9 +3,11 @@
 
 #include <QString>
 
+class DashboardWindow;  // Forward declaration (don't include .h here)
+
 namespace LoginBackend {
-bool authenticate(const QString& username, const QString& password);
-QString receiveLogsAndEvents();  // New function to receive log + motion alert
+bool authenticate(const QString& username, const QString& password, DashboardWindow* dashboardWindow);
+QString receiveLogsAndEvents();
 }
 
 #endif // LOGIN_BACKEND_H

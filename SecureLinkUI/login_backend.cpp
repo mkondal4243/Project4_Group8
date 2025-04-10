@@ -1,5 +1,11 @@
 #include "login_backend.h"
 #include "client_utils.h"
+#include "dashboardwindow.h"  // 👈 Add this include to control UI
+
+#include <QDir>
+#include <QFile>
+#include <QTextStream>
+#include <QIODevice>
 #include <string>
 
 #define SERVER_IP "127.0.0.1"
@@ -10,30 +16,63 @@ namespace LoginBackend {
 static std::string lastLogData;
 static std::string lastMotionAlert;
 
-bool authenticate(const QString& username, const QString& password) {
+// ✅ Pass pointer to dashboard window to update status
+bool authenticate(const QString& username, const QString& password, DashboardWindow* dashboardWindow) {
+    dashboardWindow->updateServerStatus("🟡 Connecting to Server...", "orange");
+
     int sock = ClientUtils::createSocket();
-    if (sock < 0) return false;
+    if (sock < 0) {
+        dashboardWindow->updateServerStatus("🔴 Socket Error", "red");
+        return false;
+    }
 
     if (!ClientUtils::connectToServer(sock, SERVER_IP, SERVER_PORT)) {
         ClientUtils::closeSocket(sock);
+        dashboardWindow->updateServerStatus("🔴 Server Disconnected", "red");
         return false;
     }
 
     std::string credentials = username.toStdString() + ":" + password.toStdString();
     ClientUtils::sendMessage(sock, credentials);
 
-    std::string response = ClientUtils::receiveMessage(sock);
-    if (response == "AUTH_SUCCESS") {
-        lastLogData = ClientUtils::receiveMessage(sock);
-        lastMotionAlert = ClientUtils::receiveMessage(sock);
+    std::string authResponse = ClientUtils::receiveMessage(sock);
+    if (authResponse.find("AUTH_SUCCESS") == std::string::npos) {
+        ClientUtils::closeSocket(sock);
+        dashboardWindow->updateServerStatus("🔴 Login Failed", "red");
+        return false;
+    }
+
+    dashboardWindow->updateServerStatus("🟢 Server Status: Monitoring", "lightgreen");
+
+    std::string logPacket = ClientUtils::receiveMessage(sock);
+    lastLogData = logPacket;
+
+    std::string motionPacket = ClientUtils::receiveMessage(sock);
+    lastMotionAlert = motionPacket;
+
+    QDir().mkpath("logs");
+    QFile file("logs/received_logs.txt");
+    if (file.open(QIODevice::WriteOnly | QIODevice::Text)) {
+        QTextStream out(&file);
+        out << QString::fromStdString(lastLogData) << "\n\n"
+            << QString::fromStdString(lastMotionAlert);
+        file.close();
     }
 
     ClientUtils::closeSocket(sock);
-    return response == "AUTH_SUCCESS";
+    return true;
 }
 
 QString receiveLogsAndEvents() {
-    return QString::fromStdString(lastLogData + "\n\n" + lastMotionAlert);
+    QFile file("logs/received_logs.txt");
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        return "❌ Failed to open log file.\n";
+    }
+
+    QTextStream in(&file);
+    QString logs = in.readAll();
+    file.close();
+    return logs;
 }
 
 }

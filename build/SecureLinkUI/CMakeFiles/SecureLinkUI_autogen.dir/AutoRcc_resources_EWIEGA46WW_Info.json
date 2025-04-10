@@ -1,0 +1,26 @@
+{
+	"BUILD_DIR" : "/Users/ruqi/secured/Project4_Group8/build/SecureLinkUI/SecureLinkUI_autogen",
+	"CMAKE_BINARY_DIR" : "/Users/ruqi/secured/Project4_Group8/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/Users/ruqi/secured/Project4_Group8/build/SecureLinkUI",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/Users/ruqi/secured/Project4_Group8/SecureLinkUI",
+	"CMAKE_SOURCE_DIR" : "/Users/ruqi/secured/Project4_Group8",
+	"CROSS_CONFIG" : false,
+	"GENERATOR" : "Unix Makefiles",
+	"INCLUDE_DIR" : "/Users/ruqi/secured/Project4_Group8/build/SecureLinkUI/SecureLinkUI_autogen/include",
+	"INPUTS" : 
+	[
+		"/Users/ruqi/secured/Project4_Group8/SecureLinkUI/images/bulb_on.png",
+		"/Users/ruqi/secured/Project4_Group8/SecureLinkUI/images/bulb_off.png"
+	],
+	"LOCK_FILE" : "/Users/ruqi/secured/Project4_Group8/build/SecureLinkUI/CMakeFiles/SecureLinkUI_autogen.dir/AutoRcc_resources_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "resources" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_resources.cpp",
+	"RCC_EXECUTABLE" : "/opt/homebrew/Cellar/qt@5/5.15.16_1/bin/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/Users/ruqi/secured/Project4_Group8/build/SecureLinkUI/CMakeFiles/SecureLinkUI_autogen.dir/AutoRcc_resources_EWIEGA46WW_Used.txt",
+	"SOURCE" : "/Users/ruqi/secured/Project4_Group8/SecureLinkUI/resources.qrc",
+	"USE_BETTER_GRAPH" : false,
+	"VERBOSITY" : 0
+}
