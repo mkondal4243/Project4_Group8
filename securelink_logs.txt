@@ -1,4 +1,0 @@
-🚨 Motion detected at Garage [2025-04-10 14:21]
-🔐 Lock toggled by admin [2025-04-10 14:25]
-💡 Light toggled in Living Room [2025-04-10 14:27]
-🛡️ Server entered MONITORING mode
