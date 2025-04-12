@@ -160,7 +160,6 @@ server: CMakeFiles/server.dir/server/server_state.cpp.o
 server: CMakeFiles/server.dir/server/camera_handler.cpp.o
 server: CMakeFiles/server.dir/build.make
 server: libshared.a
-server: libshared.a
 server: CMakeFiles/server.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable server"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/server.dir/link.txt --verbose=$(VERBOSE)

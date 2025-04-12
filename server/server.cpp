@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <sstream>
 #include <cstring>
 #include <sys/socket.h>
 #include <arpa/inet.h>
@@ -12,14 +13,21 @@
 #include "server_logger.h"
 #include "server_state.h"
 #include "server_db.h"
-#include "../shared/data_packet.h"
 #include "camera_handler.h"
+#include "../shared/data_packet.h"
+#include "../shared/base64.h"
 
 #define SERVER_PORT 9090
 #define MAX_BACKLOG 5
-#define LOG_FILE_PATH "server_log.txt"
+#define LOG_FILE_PATH "server/server_log.txt"
 
-// 📝 Utility to log entries into server_log.txt
+std::string getTimestamp() {
+    std::time_t now = std::time(nullptr);
+    char buffer[32];
+    std::strftime(buffer, sizeof(buffer), "%Y-%m-%d %H:%M:%S", std::localtime(&now));
+    return std::string(buffer);
+}
+
 void appendToLogFile(const std::string &entry) {
     std::ofstream log(LOG_FILE_PATH, std::ios::app);
     if (log.is_open()) {
@@ -28,7 +36,6 @@ void appendToLogFile(const std::string &entry) {
     }
 }
 
-// 📦 Send full server_log.txt to client
 void sendLogFile(int client_socket) {
     std::ifstream logFile(LOG_FILE_PATH);
     if (!logFile.is_open()) {
@@ -39,27 +46,15 @@ void sendLogFile(int client_socket) {
         return;
     }
 
-    std::string content((std::istreambuf_iterator<char>(logFile)), std::istreambuf_iterator<char>());
-    std::cout << "📤 Sending log contents:\n" << content << std::endl;  // ✅ Print content
+    std::ostringstream contentStream;
+    contentStream << logFile.rdbuf();  // Read full content
+    std::string content = contentStream.str();
 
     DataPacket logPacket(PacketType::LOG_DATA, "server", "client", content);
     std::string response = logPacket.serialize();
     send(client_socket, response.c_str(), response.length(), 0);
-    ServerLogger::logEvent("✅ Log file sent to client");
+    ServerLogger::logEvent("✅ Real server_log.txt sent to client");
     logFile.close();
-}
-
-// 🚨 Simulate motion and send + log it
-void simulateMotionDetection(int client_socket) {
-    std::this_thread::sleep_for(std::chrono::seconds(2));
-    std::string motionAlert = "🚨 Motion detected in Garage!";
-
-    DataPacket motionPacket(PacketType::SECURITY_EVENT, "server", "client", motionAlert);
-    std::string response = motionPacket.serialize();
-    send(client_socket, response.c_str(), response.length(), 0);
-
-    ServerLogger::logEvent("🚨 Motion alert sent to client");
-    appendToLogFile("[MOTION] " + motionAlert);
 }
 
 int main() {
@@ -71,10 +66,15 @@ int main() {
         return -1;
     }
 
-    // ✅ Print working directory
     char cwd[PATH_MAX];
     if (getcwd(cwd, sizeof(cwd))) {
         std::cout << "🛠️ SERVER CURRENT DIR: " << cwd << std::endl;
+    }
+
+    std::ofstream initLog(LOG_FILE_PATH, std::ios::app);
+    if (initLog.is_open()) {
+        initLog << "[INIT] Server log initialized\n";
+        initLog.close();
     }
 
     int server_socket, client_socket;
@@ -138,34 +138,48 @@ int main() {
                 DataPacket response(PacketType::AUTH_RESPONSE, "server", packet.sender, "AUTH_SUCCESS");
                 send(client_socket, response.serialize().c_str(), response.serialize().length(), 0);
                 logAccess(packet.sender, "Logged In");
-            } 
-
-            else if (packet.packet_type == PacketType::LOG_REQUEST) {
+            }
+            else if (packet.packet_type == PacketType::LOG_REQUEST && packet.data == "LOG_REQUEST") {
                 ServerLogger::logEvent("📤 Sending logs to client...");
                 sendLogFile(client_socket);
             }
-
+            else if (packet.packet_type == PacketType::LOG_REQUEST && packet.data == "REQUEST_SNAPSHOT") {
+                std::ifstream file("server/garage.jpg", std::ios::binary);
+                if (!file.is_open()) {
+                    std::cerr << "❌ Failed to open garage.jpg\n";
+                    DataPacket errorPkt(PacketType::FILE_TRANSFER, "server", packet.sender, "ERROR: File missing");
+                    send(client_socket, errorPkt.serialize().c_str(), errorPkt.serialize().length(), 0);
+                } else {
+                    std::ostringstream oss;
+                    oss << file.rdbuf();
+                    std::string imageData = oss.str();
+                    std::string base64Encoded = base64_encode(reinterpret_cast<const unsigned char*>(imageData.c_str()), imageData.size());
+                    DataPacket filePacket(PacketType::FILE_TRANSFER, "server", packet.sender, base64Encoded);
+                    send(client_socket, filePacket.serialize().c_str(), filePacket.serialize().length(), 0);
+                    ServerLogger::logEvent("📸 Snapshot sent to client.");
+                }
+            }
             else if (packet.data == "LOCK_TOGGLE") {
-                appendToLogFile("[LOCK] Front Door toggled at " + std::to_string(time(nullptr)));
+                appendToLogFile("[LOCK] Front Door toggled at " + getTimestamp());
                 logAccess(packet.sender, "Toggled Smart Lock");
                 DataPacket response(PacketType::SECURITY_EVENT, "server", packet.sender, "LOCK_SUCCESS");
                 send(client_socket, response.serialize().c_str(), response.serialize().length(), 0);
             }
             else if (packet.data.rfind("LIGHT_TOGGLE", 0) == 0) {
-                appendToLogFile("[LIGHT] Light toggled at " + std::to_string(time(nullptr)));
+                appendToLogFile("[LIGHT] Light toggled at " + getTimestamp());
                 logAccess(packet.sender, "Toggled Smart Light");
                 DataPacket response(PacketType::SECURITY_EVENT, "server", packet.sender, "LIGHT_SUCCESS");
                 send(client_socket, response.serialize().c_str(), response.serialize().length(), 0);
             }
             else if (packet.data == "GARAGE_TOGGLE") {
-                appendToLogFile("[GARAGE] Garage toggled at " + std::to_string(time(nullptr)));
+                appendToLogFile("[GARAGE] Garage toggled at " + getTimestamp());
                 logAccess(packet.sender, "Toggled Garage Door");
                 DataPacket response(PacketType::SECURITY_EVENT, "server", packet.sender, "GARAGE_SUCCESS");
                 send(client_socket, response.serialize().c_str(), response.serialize().length(), 0);
             }
             else if (packet.data.rfind("CAMERA:", 0) == 0) {
                 std::string room = packet.data.substr(7);
-                std::string camResponse = handleCameraRequest(room);
+                std::string camResponse = "[📷] Camera feed active in " + room;
                 DataPacket response(PacketType::LOG_DATA, "server", packet.sender, camResponse);
                 send(client_socket, response.serialize().c_str(), response.serialize().length(), 0);
             }
@@ -173,6 +187,7 @@ int main() {
                 DataPacket response(PacketType::UNKNOWN, "server", packet.sender, "❌ Unknown request");
                 send(client_socket, response.serialize().c_str(), response.serialize().length(), 0);
             }
+
         } catch (const std::exception& ex) {
             std::cerr << "❌ JSON parsing failed: " << ex.what() << "\n";
         }

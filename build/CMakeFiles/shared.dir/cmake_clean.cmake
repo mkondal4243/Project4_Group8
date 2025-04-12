@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/shared.dir/shared/base64.cpp.o"
+  "CMakeFiles/shared.dir/shared/base64.cpp.o.d"
   "CMakeFiles/shared.dir/shared/data_packet.cpp.o"
   "CMakeFiles/shared.dir/shared/data_packet.cpp.o.d"
   "libshared.a"

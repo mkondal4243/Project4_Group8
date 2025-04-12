@@ -118,6 +118,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named shared
+
+# Build rule for target.
+shared: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 shared
+.PHONY : shared
+
+# fast build rule for target.
+shared/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shared.dir/build.make CMakeFiles/shared.dir/build
+.PHONY : shared/fast
+
+#=============================================================================
 # Target rules for targets named client
 
 # Build rule for target.
@@ -142,19 +155,6 @@ server: cmake_check_build_system
 server/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/build
 .PHONY : server/fast
-
-#=============================================================================
-# Target rules for targets named shared
-
-# Build rule for target.
-shared: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 shared
-.PHONY : shared
-
-# fast build rule for target.
-shared/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shared.dir/build.make CMakeFiles/shared.dir/build
-.PHONY : shared/fast
 
 #=============================================================================
 # Target rules for targets named SecureLinkUI
@@ -387,6 +387,30 @@ server/server_state.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/server_state.cpp.s
 .PHONY : server/server_state.cpp.s
 
+shared/base64.o: shared/base64.cpp.o
+.PHONY : shared/base64.o
+
+# target to build an object file
+shared/base64.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shared.dir/build.make CMakeFiles/shared.dir/shared/base64.cpp.o
+.PHONY : shared/base64.cpp.o
+
+shared/base64.i: shared/base64.cpp.i
+.PHONY : shared/base64.i
+
+# target to preprocess a source file
+shared/base64.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shared.dir/build.make CMakeFiles/shared.dir/shared/base64.cpp.i
+.PHONY : shared/base64.cpp.i
+
+shared/base64.s: shared/base64.cpp.s
+.PHONY : shared/base64.s
+
+# target to generate assembly for a file
+shared/base64.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shared.dir/build.make CMakeFiles/shared.dir/shared/base64.cpp.s
+.PHONY : shared/base64.cpp.s
+
 shared/data_packet.o: shared/data_packet.cpp.o
 .PHONY : shared/data_packet.o
 
@@ -449,6 +473,9 @@ help:
 	@echo "... server/server_state.o"
 	@echo "... server/server_state.i"
 	@echo "... server/server_state.s"
+	@echo "... shared/base64.o"
+	@echo "... shared/base64.i"
+	@echo "... shared/base64.s"
 	@echo "... shared/data_packet.o"
 	@echo "... shared/data_packet.i"
 	@echo "... shared/data_packet.s"

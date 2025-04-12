@@ -63,13 +63,106 @@
 		"/opt/homebrew/opt/qt@5/lib/cmake/Qt5LinguistTools/Qt5LinguistToolsConfigVersion.cmake",
 		"/opt/homebrew/opt/qt@5/lib/cmake/Qt5LinguistTools/Qt5LinguistToolsConfig.cmake",
 		"/opt/homebrew/opt/qt@5/lib/cmake/Qt5LinguistTools/Qt5LinguistToolsMacros.cmake",
-		"/opt/homebrew/share/cmake/Modules/CMakeParseArguments.cmake"
+		"/opt/homebrew/share/cmake/Modules/CMakeParseArguments.cmake",
+		"/Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/resources.qrc"
 	],
 	"CMAKE_SOURCE_DIR" : "/Users/ruqi/Desktop/securedlink/Project4_Group8-main",
 	"CROSS_CONFIG" : false,
 	"DEP_FILE" : "/Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI/SecureLinkUI_autogen/deps",
 	"DEP_FILE_RULE_NAME" : "SecureLinkUI_autogen/timestamp",
-	"HEADERS" : [],
+	"HEADERS" : 
+	[
+		[
+			"/Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/accesslogswidget.h",
+			"MU",
+			"EWIEGA46WW/moc_accesslogswidget.cpp",
+			null
+		],
+		[
+			"/Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/camerapage.h",
+			"MU",
+			"EWIEGA46WW/moc_camerapage.cpp",
+			null
+		],
+		[
+			"/Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/dashboardwindow.h",
+			"MU",
+			"EWIEGA46WW/moc_dashboardwindow.cpp",
+			null
+		],
+		[
+			"/Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/garagedoorwindow.h",
+			"MU",
+			"EWIEGA46WW/moc_garagedoorwindow.cpp",
+			null
+		],
+		[
+			"/Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/login_backend.h",
+			"MU",
+			"EWIEGA46WW/moc_login_backend.cpp",
+			null
+		],
+		[
+			"/Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/loginwindow.h",
+			"MU",
+			"EWIEGA46WW/moc_loginwindow.cpp",
+			null
+		],
+		[
+			"/Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/logtransferwindow.h",
+			"MU",
+			"EWIEGA46WW/moc_logtransferwindow.cpp",
+			null
+		],
+		[
+			"/Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/mainwindow.h",
+			"MU",
+			"EWIEGA46WW/moc_mainwindow.cpp",
+			null
+		],
+		[
+			"/Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/motionalertswidget.h",
+			"MU",
+			"EWIEGA46WW/moc_motionalertswidget.cpp",
+			null
+		],
+		[
+			"/Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/smartlightwindow.h",
+			"MU",
+			"EWIEGA46WW/moc_smartlightwindow.cpp",
+			null
+		],
+		[
+			"/Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/smartlockwindow.h",
+			"MU",
+			"EWIEGA46WW/moc_smartlockwindow.cpp",
+			null
+		],
+		[
+			"/Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/toggleswitch.h",
+			"MU",
+			"EWIEGA46WW/moc_toggleswitch.cpp",
+			null
+		],
+		[
+			"/Users/ruqi/Desktop/securedlink/Project4_Group8-main/client/client_utils.h",
+			"MU",
+			"HH6U7UXD5R/moc_client_utils.cpp",
+			null
+		],
+		[
+			"/Users/ruqi/Desktop/securedlink/Project4_Group8-main/shared/base64.h",
+			"MU",
+			"4MHYQNOUPP/moc_base64.cpp",
+			null
+		],
+		[
+			"/Users/ruqi/Desktop/securedlink/Project4_Group8-main/shared/data_packet.h",
+			"MU",
+			"4MHYQNOUPP/moc_data_packet.cpp",
+			null
+		]
+	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
 	"INCLUDE_DIR" : "/Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI/SecureLinkUI_autogen/include",
 	"MOC_COMPILATION_FILE" : "/Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI/SecureLinkUI_autogen/mocs_compilation.cpp",
@@ -93,8 +186,8 @@
 	],
 	"MOC_INCLUDES" : 
 	[
-		"/Users/ruqi/Desktop/securedlink/client",
-		"/Users/ruqi/Desktop/securedlink/shared",
+		"/Users/ruqi/Desktop/securedlink/Project4_Group8-main/client",
+		"/Users/ruqi/Desktop/securedlink/Project4_Group8-main/shared",
 		"/opt/homebrew/opt/qt@5/lib/QtWidgets.framework",
 		"/opt/homebrew/opt/qt@5/lib/QtWidgets.framework/Headers",
 		"/opt/homebrew/opt/qt@5/lib/QtGui.framework",
@@ -139,7 +232,89 @@
 	"QT_VERSION_MAJOR" : 5,
 	"QT_VERSION_MINOR" : 15,
 	"SETTINGS_FILE" : "/Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI/CMakeFiles/SecureLinkUI_autogen.dir/AutogenUsed.txt",
-	"SOURCES" : [],
+	"SOURCES" : 
+	[
+		[
+			"/Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/accesslogswidget.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/camerapage.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/dashboardwindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/garagedoorwindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/login_backend.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/loginwindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/logtransferwindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/main.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/mainwindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/motionalertswidget.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/smartlightwindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/smartlockwindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/toggleswitch.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/ruqi/Desktop/securedlink/Project4_Group8-main/client/client_utils.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/ruqi/Desktop/securedlink/Project4_Group8-main/shared/base64.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/ruqi/Desktop/securedlink/Project4_Group8-main/shared/data_packet.cpp",
+			"MU",
+			null
+		]
+	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],
 	"UIC_SKIP" : [],

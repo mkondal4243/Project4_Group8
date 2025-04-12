@@ -159,6 +159,30 @@ SecureLinkUI_autogen/fast:
 	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI_autogen.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI_autogen.dir/build
 .PHONY : SecureLinkUI_autogen/fast
 
+SecureLinkUI_autogen/EWIEGA46WW/qrc_resources.o: SecureLinkUI_autogen/EWIEGA46WW/qrc_resources.cpp.o
+.PHONY : SecureLinkUI_autogen/EWIEGA46WW/qrc_resources.o
+
+# target to build an object file
+SecureLinkUI_autogen/EWIEGA46WW/qrc_resources.cpp.o:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/SecureLinkUI_autogen/EWIEGA46WW/qrc_resources.cpp.o
+.PHONY : SecureLinkUI_autogen/EWIEGA46WW/qrc_resources.cpp.o
+
+SecureLinkUI_autogen/EWIEGA46WW/qrc_resources.i: SecureLinkUI_autogen/EWIEGA46WW/qrc_resources.cpp.i
+.PHONY : SecureLinkUI_autogen/EWIEGA46WW/qrc_resources.i
+
+# target to preprocess a source file
+SecureLinkUI_autogen/EWIEGA46WW/qrc_resources.cpp.i:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/SecureLinkUI_autogen/EWIEGA46WW/qrc_resources.cpp.i
+.PHONY : SecureLinkUI_autogen/EWIEGA46WW/qrc_resources.cpp.i
+
+SecureLinkUI_autogen/EWIEGA46WW/qrc_resources.s: SecureLinkUI_autogen/EWIEGA46WW/qrc_resources.cpp.s
+.PHONY : SecureLinkUI_autogen/EWIEGA46WW/qrc_resources.s
+
+# target to generate assembly for a file
+SecureLinkUI_autogen/EWIEGA46WW/qrc_resources.cpp.s:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/SecureLinkUI_autogen/EWIEGA46WW/qrc_resources.cpp.s
+.PHONY : SecureLinkUI_autogen/EWIEGA46WW/qrc_resources.cpp.s
+
 SecureLinkUI_autogen/mocs_compilation.o: SecureLinkUI_autogen/mocs_compilation.cpp.o
 .PHONY : SecureLinkUI_autogen/mocs_compilation.o
 
@@ -183,6 +207,390 @@ SecureLinkUI_autogen/mocs_compilation.cpp.s:
 	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/SecureLinkUI_autogen/mocs_compilation.cpp.s
 .PHONY : SecureLinkUI_autogen/mocs_compilation.cpp.s
 
+__/client/client_utils.o: __/client/client_utils.cpp.o
+.PHONY : __/client/client_utils.o
+
+# target to build an object file
+__/client/client_utils.cpp.o:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/__/client/client_utils.cpp.o
+.PHONY : __/client/client_utils.cpp.o
+
+__/client/client_utils.i: __/client/client_utils.cpp.i
+.PHONY : __/client/client_utils.i
+
+# target to preprocess a source file
+__/client/client_utils.cpp.i:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/__/client/client_utils.cpp.i
+.PHONY : __/client/client_utils.cpp.i
+
+__/client/client_utils.s: __/client/client_utils.cpp.s
+.PHONY : __/client/client_utils.s
+
+# target to generate assembly for a file
+__/client/client_utils.cpp.s:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/__/client/client_utils.cpp.s
+.PHONY : __/client/client_utils.cpp.s
+
+__/shared/base64.o: __/shared/base64.cpp.o
+.PHONY : __/shared/base64.o
+
+# target to build an object file
+__/shared/base64.cpp.o:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/__/shared/base64.cpp.o
+.PHONY : __/shared/base64.cpp.o
+
+__/shared/base64.i: __/shared/base64.cpp.i
+.PHONY : __/shared/base64.i
+
+# target to preprocess a source file
+__/shared/base64.cpp.i:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/__/shared/base64.cpp.i
+.PHONY : __/shared/base64.cpp.i
+
+__/shared/base64.s: __/shared/base64.cpp.s
+.PHONY : __/shared/base64.s
+
+# target to generate assembly for a file
+__/shared/base64.cpp.s:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/__/shared/base64.cpp.s
+.PHONY : __/shared/base64.cpp.s
+
+__/shared/data_packet.o: __/shared/data_packet.cpp.o
+.PHONY : __/shared/data_packet.o
+
+# target to build an object file
+__/shared/data_packet.cpp.o:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/__/shared/data_packet.cpp.o
+.PHONY : __/shared/data_packet.cpp.o
+
+__/shared/data_packet.i: __/shared/data_packet.cpp.i
+.PHONY : __/shared/data_packet.i
+
+# target to preprocess a source file
+__/shared/data_packet.cpp.i:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/__/shared/data_packet.cpp.i
+.PHONY : __/shared/data_packet.cpp.i
+
+__/shared/data_packet.s: __/shared/data_packet.cpp.s
+.PHONY : __/shared/data_packet.s
+
+# target to generate assembly for a file
+__/shared/data_packet.cpp.s:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/__/shared/data_packet.cpp.s
+.PHONY : __/shared/data_packet.cpp.s
+
+accesslogswidget.o: accesslogswidget.cpp.o
+.PHONY : accesslogswidget.o
+
+# target to build an object file
+accesslogswidget.cpp.o:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/accesslogswidget.cpp.o
+.PHONY : accesslogswidget.cpp.o
+
+accesslogswidget.i: accesslogswidget.cpp.i
+.PHONY : accesslogswidget.i
+
+# target to preprocess a source file
+accesslogswidget.cpp.i:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/accesslogswidget.cpp.i
+.PHONY : accesslogswidget.cpp.i
+
+accesslogswidget.s: accesslogswidget.cpp.s
+.PHONY : accesslogswidget.s
+
+# target to generate assembly for a file
+accesslogswidget.cpp.s:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/accesslogswidget.cpp.s
+.PHONY : accesslogswidget.cpp.s
+
+camerapage.o: camerapage.cpp.o
+.PHONY : camerapage.o
+
+# target to build an object file
+camerapage.cpp.o:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/camerapage.cpp.o
+.PHONY : camerapage.cpp.o
+
+camerapage.i: camerapage.cpp.i
+.PHONY : camerapage.i
+
+# target to preprocess a source file
+camerapage.cpp.i:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/camerapage.cpp.i
+.PHONY : camerapage.cpp.i
+
+camerapage.s: camerapage.cpp.s
+.PHONY : camerapage.s
+
+# target to generate assembly for a file
+camerapage.cpp.s:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/camerapage.cpp.s
+.PHONY : camerapage.cpp.s
+
+dashboardwindow.o: dashboardwindow.cpp.o
+.PHONY : dashboardwindow.o
+
+# target to build an object file
+dashboardwindow.cpp.o:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/dashboardwindow.cpp.o
+.PHONY : dashboardwindow.cpp.o
+
+dashboardwindow.i: dashboardwindow.cpp.i
+.PHONY : dashboardwindow.i
+
+# target to preprocess a source file
+dashboardwindow.cpp.i:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/dashboardwindow.cpp.i
+.PHONY : dashboardwindow.cpp.i
+
+dashboardwindow.s: dashboardwindow.cpp.s
+.PHONY : dashboardwindow.s
+
+# target to generate assembly for a file
+dashboardwindow.cpp.s:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/dashboardwindow.cpp.s
+.PHONY : dashboardwindow.cpp.s
+
+garagedoorwindow.o: garagedoorwindow.cpp.o
+.PHONY : garagedoorwindow.o
+
+# target to build an object file
+garagedoorwindow.cpp.o:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/garagedoorwindow.cpp.o
+.PHONY : garagedoorwindow.cpp.o
+
+garagedoorwindow.i: garagedoorwindow.cpp.i
+.PHONY : garagedoorwindow.i
+
+# target to preprocess a source file
+garagedoorwindow.cpp.i:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/garagedoorwindow.cpp.i
+.PHONY : garagedoorwindow.cpp.i
+
+garagedoorwindow.s: garagedoorwindow.cpp.s
+.PHONY : garagedoorwindow.s
+
+# target to generate assembly for a file
+garagedoorwindow.cpp.s:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/garagedoorwindow.cpp.s
+.PHONY : garagedoorwindow.cpp.s
+
+login_backend.o: login_backend.cpp.o
+.PHONY : login_backend.o
+
+# target to build an object file
+login_backend.cpp.o:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/login_backend.cpp.o
+.PHONY : login_backend.cpp.o
+
+login_backend.i: login_backend.cpp.i
+.PHONY : login_backend.i
+
+# target to preprocess a source file
+login_backend.cpp.i:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/login_backend.cpp.i
+.PHONY : login_backend.cpp.i
+
+login_backend.s: login_backend.cpp.s
+.PHONY : login_backend.s
+
+# target to generate assembly for a file
+login_backend.cpp.s:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/login_backend.cpp.s
+.PHONY : login_backend.cpp.s
+
+loginwindow.o: loginwindow.cpp.o
+.PHONY : loginwindow.o
+
+# target to build an object file
+loginwindow.cpp.o:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/loginwindow.cpp.o
+.PHONY : loginwindow.cpp.o
+
+loginwindow.i: loginwindow.cpp.i
+.PHONY : loginwindow.i
+
+# target to preprocess a source file
+loginwindow.cpp.i:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/loginwindow.cpp.i
+.PHONY : loginwindow.cpp.i
+
+loginwindow.s: loginwindow.cpp.s
+.PHONY : loginwindow.s
+
+# target to generate assembly for a file
+loginwindow.cpp.s:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/loginwindow.cpp.s
+.PHONY : loginwindow.cpp.s
+
+logtransferwindow.o: logtransferwindow.cpp.o
+.PHONY : logtransferwindow.o
+
+# target to build an object file
+logtransferwindow.cpp.o:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/logtransferwindow.cpp.o
+.PHONY : logtransferwindow.cpp.o
+
+logtransferwindow.i: logtransferwindow.cpp.i
+.PHONY : logtransferwindow.i
+
+# target to preprocess a source file
+logtransferwindow.cpp.i:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/logtransferwindow.cpp.i
+.PHONY : logtransferwindow.cpp.i
+
+logtransferwindow.s: logtransferwindow.cpp.s
+.PHONY : logtransferwindow.s
+
+# target to generate assembly for a file
+logtransferwindow.cpp.s:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/logtransferwindow.cpp.s
+.PHONY : logtransferwindow.cpp.s
+
+main.o: main.cpp.o
+.PHONY : main.o
+
+# target to build an object file
+main.cpp.o:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/main.cpp.o
+.PHONY : main.cpp.o
+
+main.i: main.cpp.i
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/main.cpp.s
+.PHONY : main.cpp.s
+
+mainwindow.o: mainwindow.cpp.o
+.PHONY : mainwindow.o
+
+# target to build an object file
+mainwindow.cpp.o:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/mainwindow.cpp.o
+.PHONY : mainwindow.cpp.o
+
+mainwindow.i: mainwindow.cpp.i
+.PHONY : mainwindow.i
+
+# target to preprocess a source file
+mainwindow.cpp.i:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/mainwindow.cpp.i
+.PHONY : mainwindow.cpp.i
+
+mainwindow.s: mainwindow.cpp.s
+.PHONY : mainwindow.s
+
+# target to generate assembly for a file
+mainwindow.cpp.s:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/mainwindow.cpp.s
+.PHONY : mainwindow.cpp.s
+
+motionalertswidget.o: motionalertswidget.cpp.o
+.PHONY : motionalertswidget.o
+
+# target to build an object file
+motionalertswidget.cpp.o:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/motionalertswidget.cpp.o
+.PHONY : motionalertswidget.cpp.o
+
+motionalertswidget.i: motionalertswidget.cpp.i
+.PHONY : motionalertswidget.i
+
+# target to preprocess a source file
+motionalertswidget.cpp.i:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/motionalertswidget.cpp.i
+.PHONY : motionalertswidget.cpp.i
+
+motionalertswidget.s: motionalertswidget.cpp.s
+.PHONY : motionalertswidget.s
+
+# target to generate assembly for a file
+motionalertswidget.cpp.s:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/motionalertswidget.cpp.s
+.PHONY : motionalertswidget.cpp.s
+
+smartlightwindow.o: smartlightwindow.cpp.o
+.PHONY : smartlightwindow.o
+
+# target to build an object file
+smartlightwindow.cpp.o:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/smartlightwindow.cpp.o
+.PHONY : smartlightwindow.cpp.o
+
+smartlightwindow.i: smartlightwindow.cpp.i
+.PHONY : smartlightwindow.i
+
+# target to preprocess a source file
+smartlightwindow.cpp.i:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/smartlightwindow.cpp.i
+.PHONY : smartlightwindow.cpp.i
+
+smartlightwindow.s: smartlightwindow.cpp.s
+.PHONY : smartlightwindow.s
+
+# target to generate assembly for a file
+smartlightwindow.cpp.s:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/smartlightwindow.cpp.s
+.PHONY : smartlightwindow.cpp.s
+
+smartlockwindow.o: smartlockwindow.cpp.o
+.PHONY : smartlockwindow.o
+
+# target to build an object file
+smartlockwindow.cpp.o:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/smartlockwindow.cpp.o
+.PHONY : smartlockwindow.cpp.o
+
+smartlockwindow.i: smartlockwindow.cpp.i
+.PHONY : smartlockwindow.i
+
+# target to preprocess a source file
+smartlockwindow.cpp.i:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/smartlockwindow.cpp.i
+.PHONY : smartlockwindow.cpp.i
+
+smartlockwindow.s: smartlockwindow.cpp.s
+.PHONY : smartlockwindow.s
+
+# target to generate assembly for a file
+smartlockwindow.cpp.s:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/smartlockwindow.cpp.s
+.PHONY : smartlockwindow.cpp.s
+
+toggleswitch.o: toggleswitch.cpp.o
+.PHONY : toggleswitch.o
+
+# target to build an object file
+toggleswitch.cpp.o:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/toggleswitch.cpp.o
+.PHONY : toggleswitch.cpp.o
+
+toggleswitch.i: toggleswitch.cpp.i
+.PHONY : toggleswitch.i
+
+# target to preprocess a source file
+toggleswitch.cpp.i:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/toggleswitch.cpp.i
+.PHONY : toggleswitch.cpp.i
+
+toggleswitch.s: toggleswitch.cpp.s
+.PHONY : toggleswitch.s
+
+# target to generate assembly for a file
+toggleswitch.cpp.s:
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(MAKE) $(MAKESILENT) -f SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make SecureLinkUI/CMakeFiles/SecureLinkUI.dir/toggleswitch.cpp.s
+.PHONY : toggleswitch.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -194,9 +602,60 @@ help:
 	@echo "... SecureLinkUI_autogen"
 	@echo "... SecureLinkUI_autogen_timestamp_deps"
 	@echo "... SecureLinkUI"
+	@echo "... SecureLinkUI_autogen/EWIEGA46WW/qrc_resources.o"
+	@echo "... SecureLinkUI_autogen/EWIEGA46WW/qrc_resources.i"
+	@echo "... SecureLinkUI_autogen/EWIEGA46WW/qrc_resources.s"
 	@echo "... SecureLinkUI_autogen/mocs_compilation.o"
 	@echo "... SecureLinkUI_autogen/mocs_compilation.i"
 	@echo "... SecureLinkUI_autogen/mocs_compilation.s"
+	@echo "... __/client/client_utils.o"
+	@echo "... __/client/client_utils.i"
+	@echo "... __/client/client_utils.s"
+	@echo "... __/shared/base64.o"
+	@echo "... __/shared/base64.i"
+	@echo "... __/shared/base64.s"
+	@echo "... __/shared/data_packet.o"
+	@echo "... __/shared/data_packet.i"
+	@echo "... __/shared/data_packet.s"
+	@echo "... accesslogswidget.o"
+	@echo "... accesslogswidget.i"
+	@echo "... accesslogswidget.s"
+	@echo "... camerapage.o"
+	@echo "... camerapage.i"
+	@echo "... camerapage.s"
+	@echo "... dashboardwindow.o"
+	@echo "... dashboardwindow.i"
+	@echo "... dashboardwindow.s"
+	@echo "... garagedoorwindow.o"
+	@echo "... garagedoorwindow.i"
+	@echo "... garagedoorwindow.s"
+	@echo "... login_backend.o"
+	@echo "... login_backend.i"
+	@echo "... login_backend.s"
+	@echo "... loginwindow.o"
+	@echo "... loginwindow.i"
+	@echo "... loginwindow.s"
+	@echo "... logtransferwindow.o"
+	@echo "... logtransferwindow.i"
+	@echo "... logtransferwindow.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
+	@echo "... mainwindow.o"
+	@echo "... mainwindow.i"
+	@echo "... mainwindow.s"
+	@echo "... motionalertswidget.o"
+	@echo "... motionalertswidget.i"
+	@echo "... motionalertswidget.s"
+	@echo "... smartlightwindow.o"
+	@echo "... smartlightwindow.i"
+	@echo "... smartlightwindow.s"
+	@echo "... smartlockwindow.o"
+	@echo "... smartlockwindow.i"
+	@echo "... smartlockwindow.s"
+	@echo "... toggleswitch.o"
+	@echo "... toggleswitch.i"
+	@echo "... toggleswitch.s"
 .PHONY : help
 
 

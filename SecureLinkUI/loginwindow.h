@@ -21,6 +21,8 @@ private:
     QLineEdit *usernameField;
     QLineEdit *passwordField;
     QPushButton *loginButton;
+    QPushButton *forgotPasswordBtn;
+    QPushButton *signupBtn;
     QLabel *title;
 };
 

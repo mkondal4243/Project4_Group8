@@ -11,6 +11,7 @@ enum class PacketType {
     LOG_DATA,
     LOG_REQUEST,
     SECURITY_EVENT,
+    FILE_TRANSFER,
     UNKNOWN
 };
 

@@ -13,14 +13,13 @@ find_package(Qt5 REQUIRED COMPONENTS Widgets Multimedia MultimediaWidgets Sql Li
 
 set(TS_FILES SecureLinkUI_en_CA.ts)
 
-# 🔗 Include paths
-set(CLIENT_DIR ${CMAKE_SOURCE_DIR}/../client)
-set(SHARED_DIR ${CMAKE_SOURCE_DIR}/../shared)
+# 🔗 Correct include paths
+set(CLIENT_DIR ${CMAKE_SOURCE_DIR}/client)
+set(SHARED_DIR ${CMAKE_SOURCE_DIR}/shared)
 
 include_directories(${CLIENT_DIR})
 include_directories(${SHARED_DIR})
 
-# ✅ UI + Backend source
 set(PROJECT_SOURCES
     main.cpp
     mainwindow.cpp mainwindow.h mainwindow.ui
@@ -29,6 +28,9 @@ set(PROJECT_SOURCES
     ${CLIENT_DIR}/client_utils.cpp
     ${CLIENT_DIR}/client_utils.h
     ${SHARED_DIR}/data_packet.cpp
+    ${SHARED_DIR}/data_packet.h
+    ${SHARED_DIR}/base64.cpp
+    ${SHARED_DIR}/base64.h
     dashboardwindow.h dashboardwindow.cpp
     motionalertswidget.h motionalertswidget.cpp
     smartlightwindow.h smartlightwindow.cpp
@@ -49,10 +51,12 @@ target_link_libraries(SecureLinkUI
     Qt5::Multimedia
     Qt5::MultimediaWidgets
     Qt5::Sql
+    shared
 )
 
 qt5_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
 
+# 🎯 macOS bundle settings
 set_target_properties(SecureLinkUI PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER com.example.SecureLinkUI
     MACOSX_BUNDLE TRUE

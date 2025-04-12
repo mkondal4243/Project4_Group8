@@ -86,17 +86,33 @@ CMakeFiles/shared.dir/shared/data_packet.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/shared.dir/shared/data_packet.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ruqi/Desktop/securedlink/Project4_Group8-main/shared/data_packet.cpp -o CMakeFiles/shared.dir/shared/data_packet.cpp.s
 
+CMakeFiles/shared.dir/shared/base64.cpp.o: CMakeFiles/shared.dir/flags.make
+CMakeFiles/shared.dir/shared/base64.cpp.o: /Users/ruqi/Desktop/securedlink/Project4_Group8-main/shared/base64.cpp
+CMakeFiles/shared.dir/shared/base64.cpp.o: CMakeFiles/shared.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/shared.dir/shared/base64.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/shared.dir/shared/base64.cpp.o -MF CMakeFiles/shared.dir/shared/base64.cpp.o.d -o CMakeFiles/shared.dir/shared/base64.cpp.o -c /Users/ruqi/Desktop/securedlink/Project4_Group8-main/shared/base64.cpp
+
+CMakeFiles/shared.dir/shared/base64.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/shared.dir/shared/base64.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ruqi/Desktop/securedlink/Project4_Group8-main/shared/base64.cpp > CMakeFiles/shared.dir/shared/base64.cpp.i
+
+CMakeFiles/shared.dir/shared/base64.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/shared.dir/shared/base64.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ruqi/Desktop/securedlink/Project4_Group8-main/shared/base64.cpp -o CMakeFiles/shared.dir/shared/base64.cpp.s
+
 # Object files for target shared
 shared_OBJECTS = \
-"CMakeFiles/shared.dir/shared/data_packet.cpp.o"
+"CMakeFiles/shared.dir/shared/data_packet.cpp.o" \
+"CMakeFiles/shared.dir/shared/base64.cpp.o"
 
 # External object files for target shared
 shared_EXTERNAL_OBJECTS =
 
 libshared.a: CMakeFiles/shared.dir/shared/data_packet.cpp.o
+libshared.a: CMakeFiles/shared.dir/shared/base64.cpp.o
 libshared.a: CMakeFiles/shared.dir/build.make
 libshared.a: CMakeFiles/shared.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libshared.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libshared.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/shared.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/shared.dir/link.txt --verbose=$(VERBOSE)
 

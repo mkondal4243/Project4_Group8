@@ -4,6 +4,16 @@ project(SecureLinkFullProject)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# ========== Shared Source (Common .cpp/h files) ==========
+add_library(shared STATIC
+    shared/data_packet.cpp
+    shared/data_packet.h
+    shared/base64.cpp
+    shared/base64.h
+)
+
+target_include_directories(shared PUBLIC shared)
+
 # ========== Client Executable ==========
 add_executable(client
     client/client.cpp
@@ -16,6 +26,8 @@ add_executable(client
 target_include_directories(client PRIVATE
     ${CMAKE_SOURCE_DIR}/shared
 )
+
+target_link_libraries(client PRIVATE shared)
 
 # ========== Server Executable ==========
 add_executable(server
@@ -34,18 +46,7 @@ target_include_directories(server PRIVATE
     ${CMAKE_SOURCE_DIR}/shared
 )
 
-target_link_libraries(server PRIVATE shared sqlite3)  # ✅ <--- THIS LINE IS KEY
-
-# ========== Shared Source (Common .cpp/h files) ==========
-add_library(shared STATIC
-    shared/data_packet.cpp
-    shared/data_packet.h
-)
-
-target_include_directories(shared PUBLIC shared)
-
-target_link_libraries(client PRIVATE shared)
-target_link_libraries(server PRIVATE shared)
+target_link_libraries(server PRIVATE shared sqlite3)
 
 # ========== SecureLink UI ==========
 add_subdirectory(SecureLinkUI)

@@ -9,6 +9,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
   "/Users/ruqi/Desktop/securedlink/Project4_Group8-main/CMakeLists.txt"
   "/Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/CMakeLists.txt"
+  "/Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/resources.qrc"
   "CMakeFiles/3.31.5/CMakeCCompiler.cmake"
   "CMakeFiles/3.31.5/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.31.5/CMakeSystem.cmake"
@@ -194,6 +195,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/3.31.5/CMakeCXXCompiler.cmake"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "SecureLinkUI/CMakeFiles/SecureLinkUI_autogen.dir/AutogenInfo.json"
+  "SecureLinkUI/CMakeFiles/SecureLinkUI_autogen.dir/AutoRcc_resources_EWIEGA46WW_Info.json"
   "SecureLinkUI/SecureLinkUI.app/Contents/MacOS"
   "SecureLinkUI/SecureLinkUI.app/Contents/Info.plist"
   "SecureLinkUI/SecureLinkUI.app/Contents/Info.plist"
@@ -202,9 +204,9 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/shared.dir/DependInfo.cmake"
   "CMakeFiles/client.dir/DependInfo.cmake"
   "CMakeFiles/server.dir/DependInfo.cmake"
-  "CMakeFiles/shared.dir/DependInfo.cmake"
   "SecureLinkUI/CMakeFiles/SecureLinkUI.dir/DependInfo.cmake"
   "SecureLinkUI/CMakeFiles/SecureLinkUI_autogen_timestamp_deps.dir/DependInfo.cmake"
   "SecureLinkUI/CMakeFiles/SecureLinkUI_autogen.dir/DependInfo.cmake"

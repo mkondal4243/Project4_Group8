@@ -11,6 +11,8 @@ namespace ClientUtils {
     bool sendMessage(int sock, const std::string& message);
     std::string receiveMessage(int sock);
     void closeSocket(int sock);
+    std::string saveSnapshotToFile();
+    
 }
 
 

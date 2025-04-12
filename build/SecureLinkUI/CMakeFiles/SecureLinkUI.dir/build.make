@@ -69,13 +69,29 @@ include SecureLinkUI/CMakeFiles/SecureLinkUI.dir/progress.make
 # Include the compile flags for this target's objects.
 include SecureLinkUI/CMakeFiles/SecureLinkUI.dir/flags.make
 
+SecureLinkUI/SecureLinkUI_autogen/timestamp: /opt/homebrew/opt/qt@5/bin/moc
+SecureLinkUI/SecureLinkUI_autogen/timestamp: /opt/homebrew/opt/qt@5/bin/uic
+SecureLinkUI/SecureLinkUI_autogen/timestamp: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target SecureLinkUI"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /opt/homebrew/bin/cmake -E cmake_autogen /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI/CMakeFiles/SecureLinkUI_autogen.dir/AutogenInfo.json ""
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /opt/homebrew/bin/cmake -E touch /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI/SecureLinkUI_autogen/timestamp
+
+SecureLinkUI/SecureLinkUI_autogen/EWIEGA46WW/qrc_resources.cpp: /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/resources.qrc
+SecureLinkUI/SecureLinkUI_autogen/EWIEGA46WW/qrc_resources.cpp: SecureLinkUI/CMakeFiles/SecureLinkUI_autogen.dir/AutoRcc_resources_EWIEGA46WW_Info.json
+SecureLinkUI/SecureLinkUI_autogen/EWIEGA46WW/qrc_resources.cpp: /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/images/bulb_on.png
+SecureLinkUI/SecureLinkUI_autogen/EWIEGA46WW/qrc_resources.cpp: /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/images/bulb_off.png
+SecureLinkUI/SecureLinkUI_autogen/EWIEGA46WW/qrc_resources.cpp: /opt/homebrew/opt/qt@5/bin/rcc
+SecureLinkUI/SecureLinkUI_autogen/EWIEGA46WW/qrc_resources.cpp: /opt/homebrew/opt/qt@5/bin/rcc
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Automatic RCC for resources.qrc"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /opt/homebrew/bin/cmake -E cmake_autorcc /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI/CMakeFiles/SecureLinkUI_autogen.dir/AutoRcc_resources_EWIEGA46WW_Info.json 
+
 SecureLinkUI/CMakeFiles/SecureLinkUI.dir/codegen:
 .PHONY : SecureLinkUI/CMakeFiles/SecureLinkUI.dir/codegen
 
 SecureLinkUI/CMakeFiles/SecureLinkUI.dir/SecureLinkUI_autogen/mocs_compilation.cpp.o: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/flags.make
 SecureLinkUI/CMakeFiles/SecureLinkUI.dir/SecureLinkUI_autogen/mocs_compilation.cpp.o: SecureLinkUI/SecureLinkUI_autogen/mocs_compilation.cpp
 SecureLinkUI/CMakeFiles/SecureLinkUI.dir/SecureLinkUI_autogen/mocs_compilation.cpp.o: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object SecureLinkUI/CMakeFiles/SecureLinkUI.dir/SecureLinkUI_autogen/mocs_compilation.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object SecureLinkUI/CMakeFiles/SecureLinkUI.dir/SecureLinkUI_autogen/mocs_compilation.cpp.o"
 	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT SecureLinkUI/CMakeFiles/SecureLinkUI.dir/SecureLinkUI_autogen/mocs_compilation.cpp.o -MF CMakeFiles/SecureLinkUI.dir/SecureLinkUI_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/SecureLinkUI.dir/SecureLinkUI_autogen/mocs_compilation.cpp.o -c /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI/SecureLinkUI_autogen/mocs_compilation.cpp
 
 SecureLinkUI/CMakeFiles/SecureLinkUI.dir/SecureLinkUI_autogen/mocs_compilation.cpp.i: cmake_force
@@ -86,24 +102,297 @@ SecureLinkUI/CMakeFiles/SecureLinkUI.dir/SecureLinkUI_autogen/mocs_compilation.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SecureLinkUI.dir/SecureLinkUI_autogen/mocs_compilation.cpp.s"
 	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI/SecureLinkUI_autogen/mocs_compilation.cpp -o CMakeFiles/SecureLinkUI.dir/SecureLinkUI_autogen/mocs_compilation.cpp.s
 
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/main.cpp.o: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/flags.make
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/main.cpp.o: /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/main.cpp
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/main.cpp.o: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object SecureLinkUI/CMakeFiles/SecureLinkUI.dir/main.cpp.o"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT SecureLinkUI/CMakeFiles/SecureLinkUI.dir/main.cpp.o -MF CMakeFiles/SecureLinkUI.dir/main.cpp.o.d -o CMakeFiles/SecureLinkUI.dir/main.cpp.o -c /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/main.cpp
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SecureLinkUI.dir/main.cpp.i"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/main.cpp > CMakeFiles/SecureLinkUI.dir/main.cpp.i
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SecureLinkUI.dir/main.cpp.s"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/main.cpp -o CMakeFiles/SecureLinkUI.dir/main.cpp.s
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/mainwindow.cpp.o: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/flags.make
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/mainwindow.cpp.o: /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/mainwindow.cpp
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/mainwindow.cpp.o: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object SecureLinkUI/CMakeFiles/SecureLinkUI.dir/mainwindow.cpp.o"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT SecureLinkUI/CMakeFiles/SecureLinkUI.dir/mainwindow.cpp.o -MF CMakeFiles/SecureLinkUI.dir/mainwindow.cpp.o.d -o CMakeFiles/SecureLinkUI.dir/mainwindow.cpp.o -c /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/mainwindow.cpp
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/mainwindow.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SecureLinkUI.dir/mainwindow.cpp.i"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/mainwindow.cpp > CMakeFiles/SecureLinkUI.dir/mainwindow.cpp.i
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/mainwindow.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SecureLinkUI.dir/mainwindow.cpp.s"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/mainwindow.cpp -o CMakeFiles/SecureLinkUI.dir/mainwindow.cpp.s
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/loginwindow.cpp.o: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/flags.make
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/loginwindow.cpp.o: /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/loginwindow.cpp
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/loginwindow.cpp.o: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object SecureLinkUI/CMakeFiles/SecureLinkUI.dir/loginwindow.cpp.o"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT SecureLinkUI/CMakeFiles/SecureLinkUI.dir/loginwindow.cpp.o -MF CMakeFiles/SecureLinkUI.dir/loginwindow.cpp.o.d -o CMakeFiles/SecureLinkUI.dir/loginwindow.cpp.o -c /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/loginwindow.cpp
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/loginwindow.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SecureLinkUI.dir/loginwindow.cpp.i"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/loginwindow.cpp > CMakeFiles/SecureLinkUI.dir/loginwindow.cpp.i
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/loginwindow.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SecureLinkUI.dir/loginwindow.cpp.s"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/loginwindow.cpp -o CMakeFiles/SecureLinkUI.dir/loginwindow.cpp.s
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/login_backend.cpp.o: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/flags.make
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/login_backend.cpp.o: /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/login_backend.cpp
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/login_backend.cpp.o: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object SecureLinkUI/CMakeFiles/SecureLinkUI.dir/login_backend.cpp.o"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT SecureLinkUI/CMakeFiles/SecureLinkUI.dir/login_backend.cpp.o -MF CMakeFiles/SecureLinkUI.dir/login_backend.cpp.o.d -o CMakeFiles/SecureLinkUI.dir/login_backend.cpp.o -c /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/login_backend.cpp
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/login_backend.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SecureLinkUI.dir/login_backend.cpp.i"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/login_backend.cpp > CMakeFiles/SecureLinkUI.dir/login_backend.cpp.i
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/login_backend.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SecureLinkUI.dir/login_backend.cpp.s"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/login_backend.cpp -o CMakeFiles/SecureLinkUI.dir/login_backend.cpp.s
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/__/client/client_utils.cpp.o: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/flags.make
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/__/client/client_utils.cpp.o: /Users/ruqi/Desktop/securedlink/Project4_Group8-main/client/client_utils.cpp
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/__/client/client_utils.cpp.o: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object SecureLinkUI/CMakeFiles/SecureLinkUI.dir/__/client/client_utils.cpp.o"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT SecureLinkUI/CMakeFiles/SecureLinkUI.dir/__/client/client_utils.cpp.o -MF CMakeFiles/SecureLinkUI.dir/__/client/client_utils.cpp.o.d -o CMakeFiles/SecureLinkUI.dir/__/client/client_utils.cpp.o -c /Users/ruqi/Desktop/securedlink/Project4_Group8-main/client/client_utils.cpp
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/__/client/client_utils.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SecureLinkUI.dir/__/client/client_utils.cpp.i"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ruqi/Desktop/securedlink/Project4_Group8-main/client/client_utils.cpp > CMakeFiles/SecureLinkUI.dir/__/client/client_utils.cpp.i
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/__/client/client_utils.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SecureLinkUI.dir/__/client/client_utils.cpp.s"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ruqi/Desktop/securedlink/Project4_Group8-main/client/client_utils.cpp -o CMakeFiles/SecureLinkUI.dir/__/client/client_utils.cpp.s
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/__/shared/data_packet.cpp.o: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/flags.make
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/__/shared/data_packet.cpp.o: /Users/ruqi/Desktop/securedlink/Project4_Group8-main/shared/data_packet.cpp
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/__/shared/data_packet.cpp.o: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object SecureLinkUI/CMakeFiles/SecureLinkUI.dir/__/shared/data_packet.cpp.o"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT SecureLinkUI/CMakeFiles/SecureLinkUI.dir/__/shared/data_packet.cpp.o -MF CMakeFiles/SecureLinkUI.dir/__/shared/data_packet.cpp.o.d -o CMakeFiles/SecureLinkUI.dir/__/shared/data_packet.cpp.o -c /Users/ruqi/Desktop/securedlink/Project4_Group8-main/shared/data_packet.cpp
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/__/shared/data_packet.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SecureLinkUI.dir/__/shared/data_packet.cpp.i"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ruqi/Desktop/securedlink/Project4_Group8-main/shared/data_packet.cpp > CMakeFiles/SecureLinkUI.dir/__/shared/data_packet.cpp.i
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/__/shared/data_packet.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SecureLinkUI.dir/__/shared/data_packet.cpp.s"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ruqi/Desktop/securedlink/Project4_Group8-main/shared/data_packet.cpp -o CMakeFiles/SecureLinkUI.dir/__/shared/data_packet.cpp.s
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/__/shared/base64.cpp.o: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/flags.make
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/__/shared/base64.cpp.o: /Users/ruqi/Desktop/securedlink/Project4_Group8-main/shared/base64.cpp
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/__/shared/base64.cpp.o: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object SecureLinkUI/CMakeFiles/SecureLinkUI.dir/__/shared/base64.cpp.o"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT SecureLinkUI/CMakeFiles/SecureLinkUI.dir/__/shared/base64.cpp.o -MF CMakeFiles/SecureLinkUI.dir/__/shared/base64.cpp.o.d -o CMakeFiles/SecureLinkUI.dir/__/shared/base64.cpp.o -c /Users/ruqi/Desktop/securedlink/Project4_Group8-main/shared/base64.cpp
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/__/shared/base64.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SecureLinkUI.dir/__/shared/base64.cpp.i"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ruqi/Desktop/securedlink/Project4_Group8-main/shared/base64.cpp > CMakeFiles/SecureLinkUI.dir/__/shared/base64.cpp.i
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/__/shared/base64.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SecureLinkUI.dir/__/shared/base64.cpp.s"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ruqi/Desktop/securedlink/Project4_Group8-main/shared/base64.cpp -o CMakeFiles/SecureLinkUI.dir/__/shared/base64.cpp.s
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/dashboardwindow.cpp.o: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/flags.make
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/dashboardwindow.cpp.o: /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/dashboardwindow.cpp
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/dashboardwindow.cpp.o: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object SecureLinkUI/CMakeFiles/SecureLinkUI.dir/dashboardwindow.cpp.o"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT SecureLinkUI/CMakeFiles/SecureLinkUI.dir/dashboardwindow.cpp.o -MF CMakeFiles/SecureLinkUI.dir/dashboardwindow.cpp.o.d -o CMakeFiles/SecureLinkUI.dir/dashboardwindow.cpp.o -c /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/dashboardwindow.cpp
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/dashboardwindow.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SecureLinkUI.dir/dashboardwindow.cpp.i"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/dashboardwindow.cpp > CMakeFiles/SecureLinkUI.dir/dashboardwindow.cpp.i
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/dashboardwindow.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SecureLinkUI.dir/dashboardwindow.cpp.s"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/dashboardwindow.cpp -o CMakeFiles/SecureLinkUI.dir/dashboardwindow.cpp.s
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/motionalertswidget.cpp.o: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/flags.make
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/motionalertswidget.cpp.o: /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/motionalertswidget.cpp
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/motionalertswidget.cpp.o: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object SecureLinkUI/CMakeFiles/SecureLinkUI.dir/motionalertswidget.cpp.o"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT SecureLinkUI/CMakeFiles/SecureLinkUI.dir/motionalertswidget.cpp.o -MF CMakeFiles/SecureLinkUI.dir/motionalertswidget.cpp.o.d -o CMakeFiles/SecureLinkUI.dir/motionalertswidget.cpp.o -c /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/motionalertswidget.cpp
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/motionalertswidget.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SecureLinkUI.dir/motionalertswidget.cpp.i"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/motionalertswidget.cpp > CMakeFiles/SecureLinkUI.dir/motionalertswidget.cpp.i
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/motionalertswidget.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SecureLinkUI.dir/motionalertswidget.cpp.s"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/motionalertswidget.cpp -o CMakeFiles/SecureLinkUI.dir/motionalertswidget.cpp.s
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/smartlightwindow.cpp.o: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/flags.make
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/smartlightwindow.cpp.o: /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/smartlightwindow.cpp
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/smartlightwindow.cpp.o: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object SecureLinkUI/CMakeFiles/SecureLinkUI.dir/smartlightwindow.cpp.o"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT SecureLinkUI/CMakeFiles/SecureLinkUI.dir/smartlightwindow.cpp.o -MF CMakeFiles/SecureLinkUI.dir/smartlightwindow.cpp.o.d -o CMakeFiles/SecureLinkUI.dir/smartlightwindow.cpp.o -c /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/smartlightwindow.cpp
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/smartlightwindow.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SecureLinkUI.dir/smartlightwindow.cpp.i"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/smartlightwindow.cpp > CMakeFiles/SecureLinkUI.dir/smartlightwindow.cpp.i
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/smartlightwindow.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SecureLinkUI.dir/smartlightwindow.cpp.s"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/smartlightwindow.cpp -o CMakeFiles/SecureLinkUI.dir/smartlightwindow.cpp.s
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/logtransferwindow.cpp.o: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/flags.make
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/logtransferwindow.cpp.o: /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/logtransferwindow.cpp
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/logtransferwindow.cpp.o: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object SecureLinkUI/CMakeFiles/SecureLinkUI.dir/logtransferwindow.cpp.o"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT SecureLinkUI/CMakeFiles/SecureLinkUI.dir/logtransferwindow.cpp.o -MF CMakeFiles/SecureLinkUI.dir/logtransferwindow.cpp.o.d -o CMakeFiles/SecureLinkUI.dir/logtransferwindow.cpp.o -c /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/logtransferwindow.cpp
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/logtransferwindow.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SecureLinkUI.dir/logtransferwindow.cpp.i"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/logtransferwindow.cpp > CMakeFiles/SecureLinkUI.dir/logtransferwindow.cpp.i
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/logtransferwindow.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SecureLinkUI.dir/logtransferwindow.cpp.s"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/logtransferwindow.cpp -o CMakeFiles/SecureLinkUI.dir/logtransferwindow.cpp.s
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/accesslogswidget.cpp.o: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/flags.make
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/accesslogswidget.cpp.o: /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/accesslogswidget.cpp
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/accesslogswidget.cpp.o: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object SecureLinkUI/CMakeFiles/SecureLinkUI.dir/accesslogswidget.cpp.o"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT SecureLinkUI/CMakeFiles/SecureLinkUI.dir/accesslogswidget.cpp.o -MF CMakeFiles/SecureLinkUI.dir/accesslogswidget.cpp.o.d -o CMakeFiles/SecureLinkUI.dir/accesslogswidget.cpp.o -c /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/accesslogswidget.cpp
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/accesslogswidget.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SecureLinkUI.dir/accesslogswidget.cpp.i"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/accesslogswidget.cpp > CMakeFiles/SecureLinkUI.dir/accesslogswidget.cpp.i
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/accesslogswidget.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SecureLinkUI.dir/accesslogswidget.cpp.s"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/accesslogswidget.cpp -o CMakeFiles/SecureLinkUI.dir/accesslogswidget.cpp.s
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/camerapage.cpp.o: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/flags.make
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/camerapage.cpp.o: /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/camerapage.cpp
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/camerapage.cpp.o: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object SecureLinkUI/CMakeFiles/SecureLinkUI.dir/camerapage.cpp.o"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT SecureLinkUI/CMakeFiles/SecureLinkUI.dir/camerapage.cpp.o -MF CMakeFiles/SecureLinkUI.dir/camerapage.cpp.o.d -o CMakeFiles/SecureLinkUI.dir/camerapage.cpp.o -c /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/camerapage.cpp
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/camerapage.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SecureLinkUI.dir/camerapage.cpp.i"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/camerapage.cpp > CMakeFiles/SecureLinkUI.dir/camerapage.cpp.i
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/camerapage.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SecureLinkUI.dir/camerapage.cpp.s"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/camerapage.cpp -o CMakeFiles/SecureLinkUI.dir/camerapage.cpp.s
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/garagedoorwindow.cpp.o: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/flags.make
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/garagedoorwindow.cpp.o: /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/garagedoorwindow.cpp
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/garagedoorwindow.cpp.o: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object SecureLinkUI/CMakeFiles/SecureLinkUI.dir/garagedoorwindow.cpp.o"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT SecureLinkUI/CMakeFiles/SecureLinkUI.dir/garagedoorwindow.cpp.o -MF CMakeFiles/SecureLinkUI.dir/garagedoorwindow.cpp.o.d -o CMakeFiles/SecureLinkUI.dir/garagedoorwindow.cpp.o -c /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/garagedoorwindow.cpp
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/garagedoorwindow.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SecureLinkUI.dir/garagedoorwindow.cpp.i"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/garagedoorwindow.cpp > CMakeFiles/SecureLinkUI.dir/garagedoorwindow.cpp.i
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/garagedoorwindow.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SecureLinkUI.dir/garagedoorwindow.cpp.s"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/garagedoorwindow.cpp -o CMakeFiles/SecureLinkUI.dir/garagedoorwindow.cpp.s
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/smartlockwindow.cpp.o: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/flags.make
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/smartlockwindow.cpp.o: /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/smartlockwindow.cpp
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/smartlockwindow.cpp.o: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object SecureLinkUI/CMakeFiles/SecureLinkUI.dir/smartlockwindow.cpp.o"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT SecureLinkUI/CMakeFiles/SecureLinkUI.dir/smartlockwindow.cpp.o -MF CMakeFiles/SecureLinkUI.dir/smartlockwindow.cpp.o.d -o CMakeFiles/SecureLinkUI.dir/smartlockwindow.cpp.o -c /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/smartlockwindow.cpp
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/smartlockwindow.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SecureLinkUI.dir/smartlockwindow.cpp.i"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/smartlockwindow.cpp > CMakeFiles/SecureLinkUI.dir/smartlockwindow.cpp.i
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/smartlockwindow.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SecureLinkUI.dir/smartlockwindow.cpp.s"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/smartlockwindow.cpp -o CMakeFiles/SecureLinkUI.dir/smartlockwindow.cpp.s
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/toggleswitch.cpp.o: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/flags.make
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/toggleswitch.cpp.o: /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/toggleswitch.cpp
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/toggleswitch.cpp.o: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object SecureLinkUI/CMakeFiles/SecureLinkUI.dir/toggleswitch.cpp.o"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT SecureLinkUI/CMakeFiles/SecureLinkUI.dir/toggleswitch.cpp.o -MF CMakeFiles/SecureLinkUI.dir/toggleswitch.cpp.o.d -o CMakeFiles/SecureLinkUI.dir/toggleswitch.cpp.o -c /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/toggleswitch.cpp
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/toggleswitch.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SecureLinkUI.dir/toggleswitch.cpp.i"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/toggleswitch.cpp > CMakeFiles/SecureLinkUI.dir/toggleswitch.cpp.i
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/toggleswitch.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SecureLinkUI.dir/toggleswitch.cpp.s"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/toggleswitch.cpp -o CMakeFiles/SecureLinkUI.dir/toggleswitch.cpp.s
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/SecureLinkUI_autogen/EWIEGA46WW/qrc_resources.cpp.o: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/flags.make
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/SecureLinkUI_autogen/EWIEGA46WW/qrc_resources.cpp.o: SecureLinkUI/SecureLinkUI_autogen/EWIEGA46WW/qrc_resources.cpp
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/SecureLinkUI_autogen/EWIEGA46WW/qrc_resources.cpp.o: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object SecureLinkUI/CMakeFiles/SecureLinkUI.dir/SecureLinkUI_autogen/EWIEGA46WW/qrc_resources.cpp.o"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT SecureLinkUI/CMakeFiles/SecureLinkUI.dir/SecureLinkUI_autogen/EWIEGA46WW/qrc_resources.cpp.o -MF CMakeFiles/SecureLinkUI.dir/SecureLinkUI_autogen/EWIEGA46WW/qrc_resources.cpp.o.d -o CMakeFiles/SecureLinkUI.dir/SecureLinkUI_autogen/EWIEGA46WW/qrc_resources.cpp.o -c /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI/SecureLinkUI_autogen/EWIEGA46WW/qrc_resources.cpp
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/SecureLinkUI_autogen/EWIEGA46WW/qrc_resources.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SecureLinkUI.dir/SecureLinkUI_autogen/EWIEGA46WW/qrc_resources.cpp.i"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI/SecureLinkUI_autogen/EWIEGA46WW/qrc_resources.cpp > CMakeFiles/SecureLinkUI.dir/SecureLinkUI_autogen/EWIEGA46WW/qrc_resources.cpp.i
+
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/SecureLinkUI_autogen/EWIEGA46WW/qrc_resources.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SecureLinkUI.dir/SecureLinkUI_autogen/EWIEGA46WW/qrc_resources.cpp.s"
+	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI/SecureLinkUI_autogen/EWIEGA46WW/qrc_resources.cpp -o CMakeFiles/SecureLinkUI.dir/SecureLinkUI_autogen/EWIEGA46WW/qrc_resources.cpp.s
+
 # Object files for target SecureLinkUI
 SecureLinkUI_OBJECTS = \
-"CMakeFiles/SecureLinkUI.dir/SecureLinkUI_autogen/mocs_compilation.cpp.o"
+"CMakeFiles/SecureLinkUI.dir/SecureLinkUI_autogen/mocs_compilation.cpp.o" \
+"CMakeFiles/SecureLinkUI.dir/main.cpp.o" \
+"CMakeFiles/SecureLinkUI.dir/mainwindow.cpp.o" \
+"CMakeFiles/SecureLinkUI.dir/loginwindow.cpp.o" \
+"CMakeFiles/SecureLinkUI.dir/login_backend.cpp.o" \
+"CMakeFiles/SecureLinkUI.dir/__/client/client_utils.cpp.o" \
+"CMakeFiles/SecureLinkUI.dir/__/shared/data_packet.cpp.o" \
+"CMakeFiles/SecureLinkUI.dir/__/shared/base64.cpp.o" \
+"CMakeFiles/SecureLinkUI.dir/dashboardwindow.cpp.o" \
+"CMakeFiles/SecureLinkUI.dir/motionalertswidget.cpp.o" \
+"CMakeFiles/SecureLinkUI.dir/smartlightwindow.cpp.o" \
+"CMakeFiles/SecureLinkUI.dir/logtransferwindow.cpp.o" \
+"CMakeFiles/SecureLinkUI.dir/accesslogswidget.cpp.o" \
+"CMakeFiles/SecureLinkUI.dir/camerapage.cpp.o" \
+"CMakeFiles/SecureLinkUI.dir/garagedoorwindow.cpp.o" \
+"CMakeFiles/SecureLinkUI.dir/smartlockwindow.cpp.o" \
+"CMakeFiles/SecureLinkUI.dir/toggleswitch.cpp.o" \
+"CMakeFiles/SecureLinkUI.dir/SecureLinkUI_autogen/EWIEGA46WW/qrc_resources.cpp.o"
 
 # External object files for target SecureLinkUI
 SecureLinkUI_EXTERNAL_OBJECTS =
 
 SecureLinkUI/SecureLinkUI.app/Contents/MacOS/SecureLinkUI: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/SecureLinkUI_autogen/mocs_compilation.cpp.o
+SecureLinkUI/SecureLinkUI.app/Contents/MacOS/SecureLinkUI: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/main.cpp.o
+SecureLinkUI/SecureLinkUI.app/Contents/MacOS/SecureLinkUI: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/mainwindow.cpp.o
+SecureLinkUI/SecureLinkUI.app/Contents/MacOS/SecureLinkUI: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/loginwindow.cpp.o
+SecureLinkUI/SecureLinkUI.app/Contents/MacOS/SecureLinkUI: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/login_backend.cpp.o
+SecureLinkUI/SecureLinkUI.app/Contents/MacOS/SecureLinkUI: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/__/client/client_utils.cpp.o
+SecureLinkUI/SecureLinkUI.app/Contents/MacOS/SecureLinkUI: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/__/shared/data_packet.cpp.o
+SecureLinkUI/SecureLinkUI.app/Contents/MacOS/SecureLinkUI: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/__/shared/base64.cpp.o
+SecureLinkUI/SecureLinkUI.app/Contents/MacOS/SecureLinkUI: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/dashboardwindow.cpp.o
+SecureLinkUI/SecureLinkUI.app/Contents/MacOS/SecureLinkUI: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/motionalertswidget.cpp.o
+SecureLinkUI/SecureLinkUI.app/Contents/MacOS/SecureLinkUI: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/smartlightwindow.cpp.o
+SecureLinkUI/SecureLinkUI.app/Contents/MacOS/SecureLinkUI: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/logtransferwindow.cpp.o
+SecureLinkUI/SecureLinkUI.app/Contents/MacOS/SecureLinkUI: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/accesslogswidget.cpp.o
+SecureLinkUI/SecureLinkUI.app/Contents/MacOS/SecureLinkUI: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/camerapage.cpp.o
+SecureLinkUI/SecureLinkUI.app/Contents/MacOS/SecureLinkUI: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/garagedoorwindow.cpp.o
+SecureLinkUI/SecureLinkUI.app/Contents/MacOS/SecureLinkUI: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/smartlockwindow.cpp.o
+SecureLinkUI/SecureLinkUI.app/Contents/MacOS/SecureLinkUI: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/toggleswitch.cpp.o
+SecureLinkUI/SecureLinkUI.app/Contents/MacOS/SecureLinkUI: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/SecureLinkUI_autogen/EWIEGA46WW/qrc_resources.cpp.o
 SecureLinkUI/SecureLinkUI.app/Contents/MacOS/SecureLinkUI: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/build.make
 SecureLinkUI/SecureLinkUI.app/Contents/MacOS/SecureLinkUI: /opt/homebrew/opt/qt@5/lib/QtMultimediaWidgets.framework/QtMultimediaWidgets
 SecureLinkUI/SecureLinkUI.app/Contents/MacOS/SecureLinkUI: /opt/homebrew/opt/qt@5/lib/QtSql.framework/QtSql
+SecureLinkUI/SecureLinkUI.app/Contents/MacOS/SecureLinkUI: libshared.a
 SecureLinkUI/SecureLinkUI.app/Contents/MacOS/SecureLinkUI: /opt/homebrew/opt/qt@5/lib/QtWidgets.framework/QtWidgets
 SecureLinkUI/SecureLinkUI.app/Contents/MacOS/SecureLinkUI: /opt/homebrew/opt/qt@5/lib/QtMultimedia.framework/QtMultimedia
 SecureLinkUI/SecureLinkUI.app/Contents/MacOS/SecureLinkUI: /opt/homebrew/opt/qt@5/lib/QtNetwork.framework/QtNetwork
 SecureLinkUI/SecureLinkUI.app/Contents/MacOS/SecureLinkUI: /opt/homebrew/opt/qt@5/lib/QtGui.framework/QtGui
 SecureLinkUI/SecureLinkUI.app/Contents/MacOS/SecureLinkUI: /opt/homebrew/opt/qt@5/lib/QtCore.framework/QtCore
 SecureLinkUI/SecureLinkUI.app/Contents/MacOS/SecureLinkUI: SecureLinkUI/CMakeFiles/SecureLinkUI.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable SecureLinkUI.app/Contents/MacOS/SecureLinkUI"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Linking CXX executable SecureLinkUI.app/Contents/MacOS/SecureLinkUI"
 	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SecureLinkUI.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -114,7 +403,8 @@ SecureLinkUI/CMakeFiles/SecureLinkUI.dir/clean:
 	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI && $(CMAKE_COMMAND) -P CMakeFiles/SecureLinkUI.dir/cmake_clean.cmake
 .PHONY : SecureLinkUI/CMakeFiles/SecureLinkUI.dir/clean
 
-SecureLinkUI/CMakeFiles/SecureLinkUI.dir/depend:
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/depend: SecureLinkUI/SecureLinkUI_autogen/EWIEGA46WW/qrc_resources.cpp
+SecureLinkUI/CMakeFiles/SecureLinkUI.dir/depend: SecureLinkUI/SecureLinkUI_autogen/timestamp
 	cd /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/ruqi/Desktop/securedlink/Project4_Group8-main /Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI /Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI/CMakeFiles/SecureLinkUI.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : SecureLinkUI/CMakeFiles/SecureLinkUI.dir/depend
 

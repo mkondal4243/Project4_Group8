@@ -10,6 +10,7 @@
 #include <QPropertyAnimation>
 #include <QLabel>
 #include <QFrame>
+#include <QTimer>
 
 LoginWindow::LoginWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -61,10 +62,19 @@ LoginWindow::LoginWindow(QWidget *parent)
     loginButton = new QPushButton("Login", this);
     connect(loginButton, &QPushButton::clicked, this, &LoginWindow::handleLogin);
 
-    QPushButton *forgotPasswordBtn = new QPushButton("Forgot Password?", this);
-    QPushButton *signupBtn = new QPushButton("Sign Up", this);
+    forgotPasswordBtn = new QPushButton("Forgot Password?", this);
+    signupBtn = new QPushButton("Sign Up", this);
+
     forgotPasswordBtn->setFlat(true);
     signupBtn->setFlat(true);
+
+    // ✅ Show fake popup on click
+    connect(forgotPasswordBtn, &QPushButton::clicked, this, [=]() {
+        QMessageBox::information(this, "Info", "This feature is not available in the demo.");
+    });
+    connect(signupBtn, &QPushButton::clicked, this, [=]() {
+        QMessageBox::information(this, "Info", "This feature is not available in the demo.");
+    });
 
     QHBoxLayout *links = new QHBoxLayout();
     links->addWidget(forgotPasswordBtn);
@@ -150,20 +160,30 @@ void LoginWindow::handleLogin()
     QString user = usernameField->text();
     QString pass = passwordField->text();
 
-    // 🔁 Direct dashboard status update during login
-    DashboardWindow* dashboardWindow = new DashboardWindow();
-
-    bool ok = LoginBackend::authenticate(user, pass, dashboardWindow);
-
-    if (ok) {
-        MainWindow* mainApp = new MainWindow();
-        mainApp->show();
-        this->close();
-        delete dashboardWindow;  // dashboardWindow was just for status updating
-    } else {
-        delete dashboardWindow;
-        QMessageBox::critical(this, "Login Failed", "Invalid credentials or server is offline.");
+    if (user.isEmpty() || pass.isEmpty()) {
+        QMessageBox::warning(this, "Missing Info", "Please enter both username and password.");
+        return;
     }
+
+    loginButton->setText("Reconnecting...");
+    loginButton->setEnabled(false);
+
+    QTimer::singleShot(2000, this, [=]() {
+        DashboardWindow* dashboardWindow = new DashboardWindow();
+        bool ok = LoginBackend::authenticate(user, pass, dashboardWindow);
+
+        if (ok) {
+            MainWindow* mainApp = new MainWindow();
+            mainApp->show();
+            this->close();
+            delete dashboardWindow;
+        } else {
+            delete dashboardWindow;
+            QMessageBox::critical(this, "Login Failed", "Invalid credentials or server is offline.");
+            loginButton->setText("Login");
+            loginButton->setEnabled(true);
+        }
+    });
 }
 
 LoginWindow::~LoginWindow() {}

@@ -44,6 +44,8 @@ file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/Users/ruqi/Desktop/securedli
 set(OLD_GLOB
   "/Users/ruqi/Desktop/securedlink/Project4_Group8-main/Project4_Group8/main.cpp"
   "/Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/accesslogswidget.cpp"
+  "/Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/build/CMakeFiles/3.31.5/CompilerIdCXX/CMakeCXXCompilerId.cpp"
+  "/Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/build/SecureLinkUI_autogen/mocs_compilation.cpp"
   "/Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/camerapage.cpp"
   "/Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/dashboardwindow.cpp"
   "/Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/garagedoorwindow.cpp"
@@ -67,6 +69,7 @@ set(OLD_GLOB
   "/Users/ruqi/Desktop/securedlink/Project4_Group8-main/server/server_launcher.cpp"
   "/Users/ruqi/Desktop/securedlink/Project4_Group8-main/server/server_logger.cpp"
   "/Users/ruqi/Desktop/securedlink/Project4_Group8-main/server/server_state.cpp"
+  "/Users/ruqi/Desktop/securedlink/Project4_Group8-main/shared/base64.cpp"
   "/Users/ruqi/Desktop/securedlink/Project4_Group8-main/shared/data_packet.cpp"
   "/Users/ruqi/Desktop/securedlink/Project4_Group8-main/shared/networking.cpp"
   "/Users/ruqi/Desktop/securedlink/Project4_Group8-main/tests/test_client.cpp"
@@ -90,6 +93,7 @@ endif()
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/Users/ruqi/Desktop/securedlink/Project4_Group8-main/*.h")
 set(OLD_GLOB
   "/Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/accesslogswidget.h"
+  "/Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/build/SecureLinkUI_autogen/moc_predefs.h"
   "/Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/camerapage.h"
   "/Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/dashboardwindow.h"
   "/Users/ruqi/Desktop/securedlink/Project4_Group8-main/SecureLinkUI/garagedoorwindow.h"
@@ -107,6 +111,7 @@ set(OLD_GLOB
   "/Users/ruqi/Desktop/securedlink/Project4_Group8-main/server/server_db.h"
   "/Users/ruqi/Desktop/securedlink/Project4_Group8-main/server/server_logger.h"
   "/Users/ruqi/Desktop/securedlink/Project4_Group8-main/server/server_state.h"
+  "/Users/ruqi/Desktop/securedlink/Project4_Group8-main/shared/base64.h"
   "/Users/ruqi/Desktop/securedlink/Project4_Group8-main/shared/data_packet.h"
   "/Users/ruqi/Desktop/securedlink/Project4_Group8-main/shared/networking.h"
   )

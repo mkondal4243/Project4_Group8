@@ -13,6 +13,8 @@
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 #include <QLabel>
+#include <QTimer>
+#include "client_utils.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -20,7 +22,6 @@ MainWindow::MainWindow(QWidget *parent)
     QWidget *central = new QWidget(this);
     QHBoxLayout *mainLayout = new QHBoxLayout(central);
 
-    // Sidebar
     sidebar = new QListWidget(this);
     sidebar->setFixedWidth(220);
     sidebar->setStyleSheet(R"(
@@ -57,7 +58,6 @@ MainWindow::MainWindow(QWidget *parent)
     sidebar->addItem("🚪 Garage Door");
     sidebar->addItem("🔒 Front Door Lock");
 
-    // Stack Area
     stackedWidget = new QStackedWidget(this);
 
     dashboardWindow = new DashboardWindow();
@@ -69,18 +69,17 @@ MainWindow::MainWindow(QWidget *parent)
     garageDoorWindow = new GarageDoorWindow();
     smartLockWindow = new SmartLockWindow();
 
-    stackedWidget->addWidget(dashboardWindow);     // 0
-    stackedWidget->addWidget(logTransferWindow);   // 1
-    stackedWidget->addWidget(motionAlertsWidget);  // 2
-    stackedWidget->addWidget(accessLogsWidget);    // 3
-    stackedWidget->addWidget(smartLightWindow);    // 4
-    stackedWidget->addWidget(cameraPage);          // 5
-    stackedWidget->addWidget(garageDoorWindow);    // 6
-    stackedWidget->addWidget(smartLockWindow);     // 7
+    stackedWidget->addWidget(dashboardWindow);
+    stackedWidget->addWidget(logTransferWindow);
+    stackedWidget->addWidget(motionAlertsWidget);
+    stackedWidget->addWidget(accessLogsWidget);
+    stackedWidget->addWidget(smartLightWindow);
+    stackedWidget->addWidget(cameraPage);
+    stackedWidget->addWidget(garageDoorWindow);
+    stackedWidget->addWidget(smartLockWindow);
 
     connect(sidebar, &QListWidget::currentRowChanged, stackedWidget, &QStackedWidget::setCurrentIndex);
 
-    // Connect Dashboard tile signals
     connect(dashboardWindow, &DashboardWindow::openSmartLockPage, [=]() {
         stackedWidget->setCurrentIndex(7);
         sidebar->setCurrentRow(7);
@@ -106,6 +105,20 @@ MainWindow::MainWindow(QWidget *parent)
 
     setWindowTitle("SecureLink - Control Center");
     setStyleSheet("background-color: #2b2b2b;");
+
+    // ✅ Server reconnect status logic
+    QTimer *statusTimer = new QTimer(this);
+    connect(statusTimer, &QTimer::timeout, this, [=]() {
+        int sock = ClientUtils::createSocket();
+        bool ok = ClientUtils::connectToServer(sock, "127.0.0.1", 9090);
+        ClientUtils::closeSocket(sock);
+        if (ok) {
+            dashboardWindow->updateServerStatus("🟢 Server Status: Connected", "lightgreen");
+        } else {
+            dashboardWindow->updateServerStatus("🔴 Server Status: Disconnected", "red");
+        }
+    });
+    statusTimer->start(5000);  // Check every 5 seconds
 }
 
 MainWindow::~MainWindow() {}

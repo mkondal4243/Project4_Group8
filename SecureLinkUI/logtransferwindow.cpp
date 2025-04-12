@@ -71,26 +71,31 @@ LogTransferWindow::LogTransferWindow(QWidget *parent)
 
 void LogTransferWindow::receiveLogs()
 {
-    // ✅ Print client path
-    qDebug() << "🛠️ CLIENT PATH:" << QCoreApplication::applicationDirPath();
-
     QString logs = QString::fromStdString(ClientUtils::sendLogRequest());
     QString timestamp = QDateTime::currentDateTime().toString("yyyy-MM-dd HH:mm:ss");
 
-    if (logs.isEmpty() || logs.startsWith("❌")) {
-        logs = R"(🚨 Motion detected at Garage [2025-04-10 14:21]
-🔐 Lock toggled by admin [2025-04-10 14:25]
-💡 Light toggled in Living Room [2025-04-10 14:27]
-🛡️ Server entered MONITORING mode)";
-        logDisplay->setPlainText(logs);
-        statusLabel->setText("⚠️ Server failed. Showing fallback sample logs.");
+    if (logs.trimmed().isEmpty() || logs.trimmed().startsWith("❌")) {
+        logDisplay->setPlainText("⚠️ Failed to get logs from server. Displaying fallback:\n\n"
+                                 "🚨 Motion detected at Garage [2025-04-10 14:21]\n"
+                                 "🔐 Lock toggled by admin [2025-04-10 14:25]\n"
+                                 "💡 Light toggled in Living Room [2025-04-10 14:27]\n"
+                                 "🛡️ Server entered MONITORING mode");
+        statusLabel->setText("⚠️ Fallback logs shown.");
     } else {
-        logDisplay->setPlainText(logs);
-        statusLabel->setText("✅ Logs received and displayed.");
+        // Directly show logs without checking for [INIT]
+        QStringList logLines = logs.trimmed().replace("\\n", "\n").split("\n", Qt::SkipEmptyParts);
+        QString formattedLogs;
+        for (const QString& line : logLines) {
+        formattedLogs += "• " + line.trimmed() + "\n";
+        }
+logDisplay->setPlainText(formattedLogs.trimmed());
+
+        statusLabel->setText("✅ Logs received from server.");
     }
 
     timestampLabel->setText("Last received: " + timestamp);
 }
+
 
 void LogTransferWindow::saveLogsToFile()
 {

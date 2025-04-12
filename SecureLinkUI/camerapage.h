@@ -27,6 +27,7 @@ private:
     QPushButton *zoomInBtn;
     QPushButton *zoomOutBtn;
     QPushButton *screenshotBtn;
+    QPushButton *downloadSnapshotBtn;
     int currentFontSize;
 };
 
