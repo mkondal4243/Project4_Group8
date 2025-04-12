@@ -1,0 +1,10 @@
+/Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/CMakeFiles/client.dir
+/Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/CMakeFiles/server.dir
+/Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/CMakeFiles/shared.dir
+/Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/CMakeFiles/edit_cache.dir
+/Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/CMakeFiles/rebuild_cache.dir
+/Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI/CMakeFiles/SecureLinkUI.dir
+/Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI/CMakeFiles/edit_cache.dir
+/Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI/CMakeFiles/rebuild_cache.dir
+/Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI/CMakeFiles/SecureLinkUI_autogen_timestamp_deps.dir
+/Users/ruqi/Desktop/securedlink/Project4_Group8-main/build/SecureLinkUI/CMakeFiles/SecureLinkUI_autogen.dir
